@@ -16,3 +16,28 @@ max_retries = 3
 binding = "VECTORIZE_CONVERSATION"
 index_name = "zundamon-conversation"
 
+[[env.praha.queues.producers]]
+queue = "zundamon-praha"
+binding = "QUEUE"
+
+[[env.praha.queues.consumers]]
+queue = "zundamon-praha"
+max_batch_size = 1
+max_retries = 3
+
+[[env.praha.vectorize]]
+binding = "VECTORIZE_CONVERSATION"
+index_name = "zundamon-conversation"
+
+[[env.agaroot.queues.producers]]
+queue = "zundamon-agaroot"
+binding = "QUEUE"
+
+[[env.agaroot.queues.consumers]]
+queue = "zundamon-agaroot"
+max_batch_size = 1
+max_retries = 3
+
+[[env.agaroot.vectorize]]
+binding = "VECTORIZE_CONVERSATION"
+index_name = "zundamon-conversation"
