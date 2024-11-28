@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@langchain/cloudflare": "0.0.2",
+    "@langchain/cloudflare": "0.1.0",
     "@langchain/core": "0.3.19",
     "@langchain/langgraph": "0.0.7",
     "@tryfabric/mack": "1.2.1",
