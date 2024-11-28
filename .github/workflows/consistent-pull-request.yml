@@ -31,7 +31,7 @@ jobs:
             feature/* bugfix/* refactor/* chore/* deps/*
 
       - name: Check base branch name
-        uses: praha-inc/action-restrict-base-branch@824225e012eff11d1d3f44ee5e862af2b7b5f1eb # v1.0.0
+        uses: praha-inc/action-restrict-base-branch@d0c225fdd8eab6e1e4b4e455e0877003c33078a2 # v1.0.2
         with:
           rules: |
             main <- feature/* bugfix/* refactor/* chore/* deps/*
