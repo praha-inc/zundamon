@@ -9,8 +9,8 @@ overrides:
 
 dependencies:
   '@langchain/cloudflare':
-    specifier: 0.0.2
-    version: 0.0.2
+    specifier: 0.1.0
+    version: 0.1.0(@langchain/core@0.3.19)
   '@langchain/core':
     specifier: 0.3.19
     version: 0.3.19
@@ -118,10 +118,6 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
     dev: true
-
-  /@cloudflare/ai@1.0.50:
-    resolution: {integrity: sha512-lgTrP514G9VRXEhWWDQ80gTs5latLBzoc8ouJKOEKRw6SPtEjHHrMkPv+WOAsamBOnXCjdBV63MVE2VCJ6PE7Q==}
-    dev: false
 
   /@cloudflare/kv-asset-handler@0.2.0:
     resolution: {integrity: sha512-MVbXLbTcAotOPUj0pAMhVtJ+3/kFkwJqc5qNOleOZTv6QkZZABDMS21dSrSlVswEHwrpWC03e4fWytjqKvuE2A==}
@@ -484,13 +480,14 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@langchain/cloudflare@0.0.2:
-    resolution: {integrity: sha512-WIU7fUWmbfqqlqTGU+sp4eTlHAJj2Pmvl76KQwjwkkcUGJaVBxlFR0WMf/OztDhlkGhLX/Uei3ATyvsGjFgWpA==}
+  /@langchain/cloudflare@0.1.0(@langchain/core@0.3.19):
+    resolution: {integrity: sha512-qCbYZkH9Faumcn8djd8UZThO8HHj10uoBJwOb3ucyM0tI3E42jbYlBjkMJpTMzc4qpzxF/86fJSqTaH+ii2hrw==}
     engines: {node: '>=18'}
+    peerDependencies:
+      '@langchain/core': '>=0.2.21 <0.4.0'
     dependencies:
-      '@cloudflare/ai': 1.0.50
-      '@langchain/core': 0.1.29
-      uuid: 9.0.1
+      '@langchain/core': 0.3.19
+      uuid: 10.0.0
     dev: false
 
   /@langchain/community@0.0.26:
