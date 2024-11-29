@@ -33,8 +33,8 @@ dependencies:
     specifier: 0.14.4
     version: 0.14.4
   slack-web-api-client:
-    specifier: 0.11.1
-    version: 0.11.1
+    specifier: 0.13.5
+    version: 0.13.5
   zod:
     specifier: 3.22.4
     version: 3.22.4
@@ -3798,10 +3798,6 @@ packages:
     resolution: {integrity: sha512-6KwwpZ5TTkD/YQrXuPCSK2Zcui/bFFnriF1QGzvPw6pjaq5HQgL3ccUXYX70Lc3RmXs6ZTJ/ccs6ZEYORyEsoQ==}
     dependencies:
       slack-web-api-client: 0.13.5
-    dev: false
-
-  /slack-web-api-client@0.11.1:
-    resolution: {integrity: sha512-Ycf5SViBSgrHXz9RBKewZVaLf6JYfpgEHdx0POmuOsg1O/EngeKYD1H8VzEFwzArMW0bXpnvoBcp+0RtQyOuIw==}
     dev: false
 
   /slack-web-api-client@0.13.5:
