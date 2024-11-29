@@ -15,8 +15,8 @@ dependencies:
     specifier: 0.3.19
     version: 0.3.19
   '@langchain/langgraph':
-    specifier: 0.0.7
-    version: 0.0.7
+    specifier: 0.2.23
+    version: 0.2.23(@langchain/core@0.3.19)
   '@tryfabric/mack':
     specifier: 1.2.1
     version: 1.2.1
@@ -785,11 +785,36 @@ packages:
       - openai
     dev: false
 
-  /@langchain/langgraph@0.0.7:
-    resolution: {integrity: sha512-d3RdFwtwwA39CW3eq9ASblnL330y6dAXZXmw7anV4XWgb++a/Xj0i1UrVri+efUUoa23BROr/p/j3nvyH1jmLg==}
+  /@langchain/langgraph-checkpoint@0.0.12(@langchain/core@0.3.19):
+    resolution: {integrity: sha512-XySxUqpt7X3k02UyncpKupZMOHqLbkjOpkGWFdwBTueT1+kVeS2+DTwZK80QT/BaWH6jEUkMk14oU9/D63R0tg==}
     engines: {node: '>=18'}
+    peerDependencies:
+      '@langchain/core': '>=0.2.31 <0.4.0'
     dependencies:
-      '@langchain/core': 0.1.29
+      '@langchain/core': 0.3.19
+      uuid: 10.0.0
+    dev: false
+
+  /@langchain/langgraph-sdk@0.0.29:
+    resolution: {integrity: sha512-qI+583YJhyj8CKTXI6VAIwYxp6qnjt5kyCV3igvl8mQhySfKRBZowoONRAoMjI42MsbbvF4GyazsUJvnWMsQ2g==}
+    dependencies:
+      '@types/json-schema': 7.0.15
+      p-queue: 6.6.2
+      p-retry: 4.6.2
+      uuid: 9.0.1
+    dev: false
+
+  /@langchain/langgraph@0.2.23(@langchain/core@0.3.19):
+    resolution: {integrity: sha512-aUD3G2cUSmrOb6xtJkd0AUctmHJXuyNPIzMR86JMEN591AtkHTVe2OhTxo15S8PPAQxJ7HrCJyMFd0EQECRASw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@langchain/core': '>=0.2.36 <0.3.0 || >=0.3.9 < 0.4.0'
+    dependencies:
+      '@langchain/core': 0.3.19
+      '@langchain/langgraph-checkpoint': 0.0.12(@langchain/core@0.3.19)
+      '@langchain/langgraph-sdk': 0.0.29
+      uuid: 10.0.0
+      zod: 3.23.8
     dev: false
 
   /@langchain/openai@0.0.14:
@@ -1030,7 +1055,6 @@ packages:
 
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
-    dev: true
 
   /@types/node-fetch@2.6.9:
     resolution: {integrity: sha512-bQVlnMLFJ2d35DkPNjEPmd9ueO/rh5EiaZt2bhqiSarPjZIuIV6bPQVqcrEyvNo+AfTrRGVazle1tl597w3gfA==}
@@ -4267,3 +4291,7 @@ packages:
 
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+
+  /zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+    dev: false
