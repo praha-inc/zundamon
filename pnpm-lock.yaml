@@ -30,8 +30,8 @@ dependencies:
     specifier: 0.1.17
     version: 0.1.17(cheerio@1.0.0)
   slack-edge:
-    specifier: 0.12.0
-    version: 0.12.0
+    specifier: 0.14.4
+    version: 0.14.4
   slack-web-api-client:
     specifier: 0.11.1
     version: 0.11.1
@@ -3794,14 +3794,18 @@ packages:
       object-inspect: 1.13.1
     dev: true
 
-  /slack-edge@0.12.0:
-    resolution: {integrity: sha512-uCQ+WneRVckq6TFSAitiDtVDjw2pDOEdEqa0klxRFf5S4AJscmKwUNrBnidYrCjBof9gQ8kfGmkRg9lsOyydDQ==}
+  /slack-edge@0.14.4:
+    resolution: {integrity: sha512-6KwwpZ5TTkD/YQrXuPCSK2Zcui/bFFnriF1QGzvPw6pjaq5HQgL3ccUXYX70Lc3RmXs6ZTJ/ccs6ZEYORyEsoQ==}
     dependencies:
-      slack-web-api-client: 0.11.1
+      slack-web-api-client: 0.13.5
     dev: false
 
   /slack-web-api-client@0.11.1:
     resolution: {integrity: sha512-Ycf5SViBSgrHXz9RBKewZVaLf6JYfpgEHdx0POmuOsg1O/EngeKYD1H8VzEFwzArMW0bXpnvoBcp+0RtQyOuIw==}
+    dev: false
+
+  /slack-web-api-client@0.13.5:
+    resolution: {integrity: sha512-h3+jY86LRY+nXP6kQmaqUSsIqVYziiVwBnmvzEXh+42Bn0fpuGIUFf2I6zEXtvjJLoVK5WczmrLewWlAWuX2/Q==}
     dev: false
 
   /slash@3.0.0:
