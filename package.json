@@ -12,7 +12,7 @@
     "dedent": "1.5.3",
     "langchain": "0.1.17",
     "slack-edge": "0.14.4",
-    "slack-web-api-client": "0.11.1",
+    "slack-web-api-client": "0.13.5",
     "zod": "3.22.4"
   },
   "devDependencies": {
