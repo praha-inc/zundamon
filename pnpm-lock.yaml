@@ -36,8 +36,8 @@ dependencies:
     specifier: 0.13.5
     version: 0.13.5
   zod:
-    specifier: 3.22.4
-    version: 3.22.4
+    specifier: 3.23.8
+    version: 3.23.8
 
 devDependencies:
   '@cloudflare/workers-types':
@@ -176,7 +176,7 @@ packages:
     engines: {node: '>=16.7.0'}
     dependencies:
       mime: 3.0.0
-      zod: 3.22.4
+      zod: 3.23.8
     dev: true
 
   /@cloudflare/workers-types@4.20241127.0:
@@ -755,7 +755,7 @@ packages:
       flat: 5.0.2
       langsmith: 0.0.68
       uuid: 9.0.1
-      zod: 3.22.4
+      zod: 3.23.8
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -773,8 +773,8 @@ packages:
       p-queue: 6.6.2
       p-retry: 4.6.2
       uuid: 9.0.1
-      zod: 3.22.4
-      zod-to-json-schema: 3.22.4(zod@3.22.4)
+      zod: 3.23.8
+      zod-to-json-schema: 3.22.4(zod@3.23.8)
     dev: false
 
   /@langchain/core@0.3.19:
@@ -790,8 +790,8 @@ packages:
       p-queue: 6.6.2
       p-retry: 4.6.2
       uuid: 10.0.0
-      zod: 3.22.4
-      zod-to-json-schema: 3.22.4(zod@3.22.4)
+      zod: 3.23.8
+      zod-to-json-schema: 3.22.4(zod@3.23.8)
     transitivePeerDependencies:
       - openai
     dev: false
@@ -835,8 +835,8 @@ packages:
       '@langchain/core': 0.1.29
       js-tiktoken: 1.0.8
       openai: 4.27.0
-      zod: 3.22.4
-      zod-to-json-schema: 3.22.4(zod@3.22.4)
+      zod: 3.23.8
+      zod-to-json-schema: 3.22.4(zod@3.23.8)
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -3014,8 +3014,8 @@ packages:
       p-retry: 4.6.2
       uuid: 9.0.1
       yaml: 2.3.4
-      zod: 3.22.4
-      zod-to-json-schema: 3.22.4(zod@3.22.4)
+      zod: 3.23.8
+      zod-to-json-schema: 3.22.4(zod@3.23.8)
     transitivePeerDependencies:
       - '@aws-crypto/sha256-js'
       - '@aws-sdk/client-bedrock-agent-runtime'
@@ -3220,7 +3220,7 @@ packages:
       workerd: 1.20241106.1
       ws: 8.18.0
       youch: 3.3.3
-      zod: 3.22.4
+      zod: 3.23.8
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -4286,17 +4286,13 @@ packages:
       stacktracey: 2.1.8
     dev: true
 
-  /zod-to-json-schema@3.22.4(zod@3.22.4):
+  /zod-to-json-schema@3.22.4(zod@3.23.8):
     resolution: {integrity: sha512-2Ed5dJ+n/O3cU383xSY28cuVi0BCQhF8nYqWU5paEpl7fVdqdAmiLdqLyfblbNdfOFwFfi/mqU4O1pwc60iBhQ==}
     peerDependencies:
       zod: ^3.22.4
     dependencies:
-      zod: 3.22.4
+      zod: 3.23.8
     dev: false
-
-  /zod@3.22.4:
-    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
 
   /zod@3.23.8:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
-    dev: false
