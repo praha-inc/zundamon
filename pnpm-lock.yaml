@@ -10,13 +10,13 @@ overrides:
 dependencies:
   '@langchain/cloudflare':
     specifier: 0.1.0
-    version: 0.1.0(@langchain/core@0.3.22)
+    version: 0.1.0(@langchain/core@0.3.23)
   '@langchain/core':
-    specifier: 0.3.22
-    version: 0.3.22
+    specifier: 0.3.23
+    version: 0.3.23
   '@langchain/langgraph':
     specifier: 0.2.28
-    version: 0.2.28(@langchain/core@0.3.22)
+    version: 0.2.28(@langchain/core@0.3.23)
   '@tryfabric/mack':
     specifier: 1.2.1
     version: 1.2.1
@@ -28,7 +28,7 @@ dependencies:
     version: 1.5.3
   langchain:
     specifier: 0.3.6
-    version: 0.3.6(@langchain/core@0.3.22)(cheerio@1.0.0)
+    version: 0.3.6(@langchain/core@0.3.23)(cheerio@1.0.0)
   slack-edge:
     specifier: 0.14.4
     version: 0.14.4
@@ -102,6 +102,10 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
     dev: true
+
+  /@cfworker/json-schema@4.0.3:
+    resolution: {integrity: sha512-ZykIcDTVv5UNmKWSTLAs3VukO6NDJkkSKxrgUTDPBkAlORVT3H9n5DbRjRl8xIotklscHdbLIa0b9+y3mQq73g==}
+    dev: false
 
   /@cloudflare/kv-asset-handler@0.3.4:
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
@@ -475,20 +479,21 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@langchain/cloudflare@0.1.0(@langchain/core@0.3.22):
+  /@langchain/cloudflare@0.1.0(@langchain/core@0.3.23):
     resolution: {integrity: sha512-qCbYZkH9Faumcn8djd8UZThO8HHj10uoBJwOb3ucyM0tI3E42jbYlBjkMJpTMzc4qpzxF/86fJSqTaH+ii2hrw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
     dependencies:
-      '@langchain/core': 0.3.22
+      '@langchain/core': 0.3.23
       uuid: 10.0.0
     dev: false
 
-  /@langchain/core@0.3.22:
-    resolution: {integrity: sha512-9rwEbxJi3Fgs8XuealNYxB6s0FCOnvXLnpiV5/oKgmEJtCRS91IqgJCWA8d59s4YkaEply/EsZVc2azNPK6Wjw==}
+  /@langchain/core@0.3.23:
+    resolution: {integrity: sha512-Aut43dEJYH/ibccSErFOLQzymkBG4emlN16P0OHWwx02bDosOR9ilZly4JJiCSYcprn2X2H8nee6P/4VMg1oQA==}
     engines: {node: '>=18'}
     dependencies:
+      '@cfworker/json-schema': 4.0.3
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
@@ -504,13 +509,13 @@ packages:
       - openai
     dev: false
 
-  /@langchain/langgraph-checkpoint@0.0.12(@langchain/core@0.3.22):
+  /@langchain/langgraph-checkpoint@0.0.12(@langchain/core@0.3.23):
     resolution: {integrity: sha512-XySxUqpt7X3k02UyncpKupZMOHqLbkjOpkGWFdwBTueT1+kVeS2+DTwZK80QT/BaWH6jEUkMk14oU9/D63R0tg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.31 <0.4.0'
     dependencies:
-      '@langchain/core': 0.3.22
+      '@langchain/core': 0.3.23
       uuid: 10.0.0
     dev: false
 
@@ -523,26 +528,26 @@ packages:
       uuid: 9.0.1
     dev: false
 
-  /@langchain/langgraph@0.2.28(@langchain/core@0.3.22):
+  /@langchain/langgraph@0.2.28(@langchain/core@0.3.23):
     resolution: {integrity: sha512-5G/lZZwcXOm68D20YqOM0oCrGzFSry4WqfrCgqX/Kz1AuGTpgAJMPhEjP193jqlECCyKMfa2TuvfTv2l55pt7A==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.36 <0.3.0 || >=0.3.9 < 0.4.0'
     dependencies:
-      '@langchain/core': 0.3.22
-      '@langchain/langgraph-checkpoint': 0.0.12(@langchain/core@0.3.22)
+      '@langchain/core': 0.3.23
+      '@langchain/langgraph-checkpoint': 0.0.12(@langchain/core@0.3.23)
       '@langchain/langgraph-sdk': 0.0.29
       uuid: 10.0.0
       zod: 3.24.0
     dev: false
 
-  /@langchain/openai@0.3.14(@langchain/core@0.3.22):
+  /@langchain/openai@0.3.14(@langchain/core@0.3.23):
     resolution: {integrity: sha512-lNWjUo1tbvsss45IF7UQtMu1NJ6oUKvhgPYWXnX9f/d6OmuLu7D99HQ3Y88vLcUo9XjjOy417olYHignMduMjA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.26 <0.4.0'
     dependencies:
-      '@langchain/core': 0.3.22
+      '@langchain/core': 0.3.23
       js-tiktoken: 1.0.15
       openai: 4.73.1(zod@3.24.0)
       zod: 3.24.0
@@ -551,13 +556,13 @@ packages:
       - encoding
     dev: false
 
-  /@langchain/textsplitters@0.1.0(@langchain/core@0.3.22):
+  /@langchain/textsplitters@0.1.0(@langchain/core@0.3.23):
     resolution: {integrity: sha512-djI4uw9rlkAb5iMhtLED+xJebDdAG935AdP4eRTB02R7OB/act55Bj9wsskhZsvuyQRpO4O1wQOp85s6T6GWmw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
     dependencies:
-      '@langchain/core': 0.3.22
+      '@langchain/core': 0.3.23
       js-tiktoken: 1.0.15
     dev: false
 
@@ -2503,7 +2508,7 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
-  /langchain@0.3.6(@langchain/core@0.3.22)(cheerio@1.0.0):
+  /langchain@0.3.6(@langchain/core@0.3.23)(cheerio@1.0.0):
     resolution: {integrity: sha512-erZOIKXzwCOrQHqY9AyjkQmaX62zUap1Sigw1KrwMUOnVoLKkVNRmAyxFlNZDZ9jLs/58MaQcaT9ReJtbj3x6w==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -2549,9 +2554,9 @@ packages:
       typeorm:
         optional: true
     dependencies:
-      '@langchain/core': 0.3.22
-      '@langchain/openai': 0.3.14(@langchain/core@0.3.22)
-      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.22)
+      '@langchain/core': 0.3.23
+      '@langchain/openai': 0.3.14(@langchain/core@0.3.23)
+      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.23)
       cheerio: 1.0.0
       js-tiktoken: 1.0.15
       js-yaml: 4.1.0
