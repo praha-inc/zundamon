@@ -27,8 +27,8 @@ dependencies:
     specifier: 1.5.3
     version: 1.5.3
   langchain:
-    specifier: 0.3.6
-    version: 0.3.6(@langchain/core@0.3.23)(cheerio@1.0.0)
+    specifier: 0.3.7
+    version: 0.3.7(@langchain/core@0.3.23)(cheerio@1.0.0)
   slack-edge:
     specifier: 0.14.4
     version: 0.14.4
@@ -2508,8 +2508,8 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
-  /langchain@0.3.6(@langchain/core@0.3.23)(cheerio@1.0.0):
-    resolution: {integrity: sha512-erZOIKXzwCOrQHqY9AyjkQmaX62zUap1Sigw1KrwMUOnVoLKkVNRmAyxFlNZDZ9jLs/58MaQcaT9ReJtbj3x6w==}
+  /langchain@0.3.7(@langchain/core@0.3.23)(cheerio@1.0.0):
+    resolution: {integrity: sha512-6/Gkk9Zez3HkbsETFxZVo1iKLmaK3OzkDseC5MYFKVmYFDXFAOyJR3srJ9P61xF8heVdsPixqYIsejBn7/9dXg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/anthropic': '*'
