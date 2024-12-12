@@ -6,7 +6,7 @@
   "dependencies": {
     "@langchain/cloudflare": "0.1.0",
     "@langchain/core": "0.3.23",
-    "@langchain/langgraph": "0.2.30",
+    "@langchain/langgraph": "0.2.32",
     "@tryfabric/mack": "1.2.1",
     "cheerio": "1.0.0",
     "dedent": "1.5.3",
