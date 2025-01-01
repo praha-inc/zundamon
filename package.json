@@ -5,7 +5,7 @@
   "type": "module",
   "dependencies": {
     "@langchain/cloudflare": "0.1.0",
-    "@langchain/core": "0.3.26",
+    "@langchain/core": "0.3.27",
     "@langchain/langgraph": "0.2.38",
     "@tryfabric/mack": "1.2.1",
     "cheerio": "1.0.0",
