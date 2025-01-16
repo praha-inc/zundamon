@@ -15,8 +15,8 @@ dependencies:
     specifier: 0.3.30
     version: 0.3.30
   '@langchain/langgraph':
-    specifier: 0.2.39
-    version: 0.2.39(@langchain/core@0.3.30)
+    specifier: 0.2.40
+    version: 0.2.40(@langchain/core@0.3.30)
   '@tryfabric/mack':
     specifier: 1.2.1
     version: 1.2.1
@@ -520,8 +520,8 @@ packages:
       uuid: 9.0.1
     dev: false
 
-  /@langchain/langgraph@0.2.39(@langchain/core@0.3.30):
-    resolution: {integrity: sha512-zoQT5LViPlB5hRS7RNwixcAonUBAHcW+IzVkGR/4vcKoE49z5rPBdZsWjJ6b1YIV1K2bdSDJWl5KSEHilvnR1Q==}
+  /@langchain/langgraph@0.2.40(@langchain/core@0.3.30):
+    resolution: {integrity: sha512-/6VSEXkHb1jAzT3VMpTpH3YCKO2A0Y3nAi4LyRB6REimWrZwk0LsurhB1NHj2hXRmntExhaNe/XxJPAHJ+g1pg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.36 <0.3.0 || >=0.3.9 < 0.4.0'
@@ -957,14 +957,6 @@ packages:
       event-target-shim: 5.0.1
     dev: false
 
-  /acorn-jsx@5.3.2(acorn@8.12.1):
-    resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
-    peerDependencies:
-      acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
-    dependencies:
-      acorn: 8.12.1
-    dev: true
-
   /acorn-jsx@5.3.2(acorn@8.14.0):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -976,12 +968,6 @@ packages:
   /acorn-walk@8.3.0:
     resolution: {integrity: sha512-FS7hV565M5l1R08MXqo8odwMTB02C2UqzB17RVgu9EyuYFBqJZ3/ZY97sQD5FewVu1UyDFc1yztUDrAwT0EypA==}
     engines: {node: '>=0.4.0'}
-    dev: true
-
-  /acorn@8.12.1:
-    resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
     dev: true
 
   /acorn@8.14.0:
@@ -1892,8 +1878,8 @@ packages:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.12.1
-      acorn-jsx: 5.3.2(acorn@8.12.1)
+      acorn: 8.14.0
+      acorn-jsx: 5.3.2(acorn@8.14.0)
       eslint-visitor-keys: 3.4.3
     dev: true
 
@@ -2481,7 +2467,7 @@ packages:
     resolution: {integrity: sha512-WYDyuc/uFcGp6YtM2H0uKmUwieOuzeE/5YocFJLnLfclZ4inf3mRn8ZVy1s7Hxji7Jxm6Ss8gqpexD/GlKoGgg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.14.0
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
       semver: 7.6.3
