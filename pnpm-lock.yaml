@@ -36,8 +36,8 @@ dependencies:
     specifier: 0.13.5
     version: 0.13.5
   zod:
-    specifier: 3.24.1
-    version: 3.24.1
+    specifier: 3.24.2
+    version: 3.24.2
 
 devDependencies:
   '@cloudflare/workers-types':
@@ -495,8 +495,8 @@ packages:
       p-queue: 6.6.2
       p-retry: 4.6.2
       uuid: 10.0.0
-      zod: 3.24.1
-      zod-to-json-schema: 3.22.4(zod@3.24.1)
+      zod: 3.24.2
+      zod-to-json-schema: 3.22.4(zod@3.24.2)
     transitivePeerDependencies:
       - openai
     dev: false
@@ -530,7 +530,7 @@ packages:
       '@langchain/langgraph-checkpoint': 0.0.15(@langchain/core@0.3.39)
       '@langchain/langgraph-sdk': 0.0.32
       uuid: 10.0.0
-      zod: 3.24.1
+      zod: 3.24.2
     dev: false
 
   /@langchain/openai@0.3.14(@langchain/core@0.3.39):
@@ -541,9 +541,9 @@ packages:
     dependencies:
       '@langchain/core': 0.3.39
       js-tiktoken: 1.0.15
-      openai: 4.73.1(zod@3.24.1)
-      zod: 3.24.1
-      zod-to-json-schema: 3.22.4(zod@3.24.1)
+      openai: 4.73.1(zod@3.24.2)
+      zod: 3.24.2
+      zod-to-json-schema: 3.22.4(zod@3.24.2)
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -2542,8 +2542,8 @@ packages:
       p-retry: 4.6.2
       uuid: 10.0.0
       yaml: 2.3.4
-      zod: 3.24.1
-      zod-to-json-schema: 3.22.4(zod@3.24.1)
+      zod: 3.24.2
+      zod-to-json-schema: 3.22.4(zod@3.24.2)
     transitivePeerDependencies:
       - encoding
       - openai
@@ -2658,7 +2658,7 @@ packages:
       workerd: 1.20250129.0
       ws: 8.18.0
       youch: 3.3.3
-      zod: 3.24.1
+      zod: 3.24.2
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -2797,7 +2797,7 @@ packages:
       wrappy: 1.0.2
     dev: true
 
-  /openai@4.73.1(zod@3.24.1):
+  /openai@4.73.1(zod@3.24.2):
     resolution: {integrity: sha512-nWImDJBcUsqrhy7yJScXB4+iqjzbUEgzfA3un/6UnHFdwWhjX24oztj69Ped/njABfOdLcO/F7CeWTI5dt8Xmg==}
     hasBin: true
     peerDependencies:
@@ -2813,7 +2813,7 @@ packages:
       form-data-encoder: 1.7.2
       formdata-node: 4.4.1
       node-fetch: 2.7.0
-      zod: 3.24.1
+      zod: 3.24.2
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -3665,13 +3665,13 @@ packages:
       stacktracey: 2.1.8
     dev: true
 
-  /zod-to-json-schema@3.22.4(zod@3.24.1):
+  /zod-to-json-schema@3.22.4(zod@3.24.2):
     resolution: {integrity: sha512-2Ed5dJ+n/O3cU383xSY28cuVi0BCQhF8nYqWU5paEpl7fVdqdAmiLdqLyfblbNdfOFwFfi/mqU4O1pwc60iBhQ==}
     peerDependencies:
       zod: ^3.22.4
     dependencies:
-      zod: 3.24.1
+      zod: 3.24.2
     dev: false
 
-  /zod@3.24.1:
-    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
+  /zod@3.24.2:
+    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
