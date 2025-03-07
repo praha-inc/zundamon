@@ -15,8 +15,8 @@ dependencies:
     specifier: 0.3.42
     version: 0.3.42
   '@langchain/langgraph':
-    specifier: 0.2.53
-    version: 0.2.53(@langchain/core@0.3.42)
+    specifier: 0.2.54
+    version: 0.2.54(@langchain/core@0.3.42)
   '@tryfabric/mack':
     specifier: 1.2.1
     version: 1.2.1
@@ -702,8 +702,8 @@ packages:
       - openai
     dev: false
 
-  /@langchain/langgraph-checkpoint@0.0.15(@langchain/core@0.3.42):
-    resolution: {integrity: sha512-AiJkvsYHqNbCh1Tx823qs2lf2qRqeB4EAMejirOk8gkpPszAGYua5c3niKYkcKR2tU8Snhrmj7Gm9HKZSFOXyw==}
+  /@langchain/langgraph-checkpoint@0.0.16(@langchain/core@0.3.42):
+    resolution: {integrity: sha512-B50l7w9o9353drHsdsD01vhQrCJw0eqvYeXid7oKeoj1Yye+qY90r97xuhiflaYCZHM5VEo2oaizs8oknerZsQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.31 <0.4.0'
@@ -721,14 +721,14 @@ packages:
       uuid: 9.0.1
     dev: false
 
-  /@langchain/langgraph@0.2.53(@langchain/core@0.3.42):
-    resolution: {integrity: sha512-1LDG9eyO4whN0UuECTRKzfbnr/DjFG+OW57k1N3gXl8u6+f6Fw2W4yY+Jd92pY/mq3OS9FAB9Y5go16AjEn1lA==}
+  /@langchain/langgraph@0.2.54(@langchain/core@0.3.42):
+    resolution: {integrity: sha512-+P2rU0Qz6bBCNPXOSV8WeUpLRTvhu8fQuzMYR2MqWsbbfmZrfmLxqtVWPHkmr5khx/txxFy1vOBAy+KwZ94mrg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.36 <0.3.0 || >=0.3.40 < 0.4.0'
     dependencies:
       '@langchain/core': 0.3.42
-      '@langchain/langgraph-checkpoint': 0.0.15(@langchain/core@0.3.42)
+      '@langchain/langgraph-checkpoint': 0.0.16(@langchain/core@0.3.42)
       '@langchain/langgraph-sdk': 0.0.32
       uuid: 10.0.0
       zod: 3.24.2
