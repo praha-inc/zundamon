@@ -10,7 +10,7 @@
     "@tryfabric/mack": "1.2.1",
     "cheerio": "1.0.0",
     "dedent": "1.5.3",
-    "langchain": "0.3.19",
+    "langchain": "0.3.20",
     "slack-edge": "0.14.4",
     "slack-web-api-client": "0.13.5",
     "zod": "3.24.2"
