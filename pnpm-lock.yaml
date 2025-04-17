@@ -27,8 +27,8 @@ dependencies:
     specifier: 1.5.3
     version: 1.5.3
   langchain:
-    specifier: 0.3.21
-    version: 0.3.21(@langchain/core@0.3.44)(cheerio@1.0.0)
+    specifier: 0.3.22
+    version: 0.3.22(@langchain/core@0.3.44)(cheerio@1.0.0)
   slack-edge:
     specifier: 0.14.4
     version: 0.14.4
@@ -1214,7 +1214,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       color-convert: 2.0.1
-    dev: true
 
   /ansi-styles@5.2.0:
     resolution: {integrity: sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==}
@@ -1395,7 +1394,6 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
-    dev: true
 
   /cheerio-select@2.1.0:
     resolution: {integrity: sha512-9v9kG0LvzrlcungtnJtpGNxY+fzECQKhK4EGJX2vByejiMX84MFNQw4UxPJl3bFbTMw+Dfs37XaIkCwTZfLh4g==}
@@ -1448,7 +1446,6 @@ packages:
     engines: {node: '>=7.0.0'}
     dependencies:
       color-name: 1.1.4
-    dev: true
 
   /color-name@1.1.3:
     resolution: {integrity: sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==}
@@ -1457,7 +1454,6 @@ packages:
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     requiresBuild: true
-    dev: true
 
   /color-string@1.9.1:
     resolution: {integrity: sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg==}
@@ -1493,6 +1489,12 @@ packages:
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
+
+  /console-table-printer@2.12.1:
+    resolution: {integrity: sha512-wKGOQRRvdnd89pCeH96e2Fn4wkbenSP6LMHfjfyNLMbGuHEFbMqQNuxXqd0oXG9caIOQ1FTvc5Uijp9/4jujnQ==}
+    dependencies:
+      simple-wcswidth: 1.0.1
+    dev: false
 
   /cookie@0.7.2:
     resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
@@ -2401,7 +2403,6 @@ packages:
   /has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
-    dev: true
 
   /has-property-descriptors@1.0.1:
     resolution: {integrity: sha512-VsX8eaIewvas0xnvinAe9bw4WfIeODpGYikiWYLH+dma0Jw6KHYqWiWfhQlgOVK8D6PvjubK5Uc4P0iIhIcNVg==}
@@ -2713,8 +2714,8 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
-  /langchain@0.3.21(@langchain/core@0.3.44)(cheerio@1.0.0):
-    resolution: {integrity: sha512-fpor/V/xJRoLM7s1yQGlUE6aZIe6LLm7ciZcstNbBUYdFpCSigvADsW2cqlBCdbMXJxb5I/z9jznjGnmciJ+aw==}
+  /langchain@0.3.22(@langchain/core@0.3.44)(cheerio@1.0.0):
+    resolution: {integrity: sha512-FVH7XKBKIEHX6DJmFIPE9yUG0vBUkrgKebQfW9BfDmnhfHOiVLns/POmSGj+/GkyJOb5I3mD6iRKYLdTKWNTYQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/anthropic': '*'
@@ -2778,7 +2779,7 @@ packages:
       js-tiktoken: 1.0.15
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.2.8
+      langsmith: 0.3.17
       openapi-types: 12.1.3
       p-retry: 4.6.2
       uuid: 10.0.0
@@ -2800,6 +2801,23 @@ packages:
     dependencies:
       '@types/uuid': 10.0.0
       commander: 10.0.1
+      p-queue: 6.6.2
+      p-retry: 4.6.2
+      semver: 7.6.3
+      uuid: 10.0.0
+    dev: false
+
+  /langsmith@0.3.17:
+    resolution: {integrity: sha512-7BCji5uic1dD6Z6sAOhZSdzORLsgEMBA4WAkJeO6VUKuc452sfi472XSqTTGHOhn6C4hSqNrnMugVLqWhxdEqA==}
+    peerDependencies:
+      openai: '*'
+    peerDependenciesMeta:
+      openai:
+        optional: true
+    dependencies:
+      '@types/uuid': 10.0.0
+      chalk: 4.1.2
+      console-table-printer: 2.12.1
       p-queue: 6.6.2
       p-retry: 4.6.2
       semver: 7.6.3
@@ -3450,6 +3468,10 @@ packages:
     dev: true
     optional: true
 
+  /simple-wcswidth@1.0.1:
+    resolution: {integrity: sha512-xMO/8eNREtaROt7tJvWJqHBDTMFN4eiQ5I4JRMuilwfnFcV5W9u7RUkueNkdw0jPqGMX36iCywelS5yilTuOxg==}
+    dev: false
+
   /slack-edge@0.14.4:
     resolution: {integrity: sha512-6KwwpZ5TTkD/YQrXuPCSK2Zcui/bFFnriF1QGzvPw6pjaq5HQgL3ccUXYX70Lc3RmXs6ZTJ/ccs6ZEYORyEsoQ==}
     dependencies:
@@ -3578,7 +3600,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       has-flag: 4.0.0
-    dev: true
 
   /supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
