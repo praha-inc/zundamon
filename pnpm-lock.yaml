@@ -15,8 +15,8 @@ dependencies:
     specifier: 0.3.47
     version: 0.3.47
   '@langchain/langgraph':
-    specifier: 0.2.65
-    version: 0.2.65(@langchain/core@0.3.47)
+    specifier: 0.2.67
+    version: 0.2.67(@langchain/core@0.3.47)
   '@tryfabric/mack':
     specifier: 1.2.1
     version: 1.2.1
@@ -721,8 +721,8 @@ packages:
       uuid: 9.0.1
     dev: false
 
-  /@langchain/langgraph@0.2.65(@langchain/core@0.3.47):
-    resolution: {integrity: sha512-g/Xap2KSEaEBXMJXGZTh31fd0qrdfaWA1l8NJzweJg6AkvVSf+d6DmMk9DtzGW8W1H1qQ2I6FWZ3AdP61Kkaig==}
+  /@langchain/langgraph@0.2.67(@langchain/core@0.3.47):
+    resolution: {integrity: sha512-tu/ewNIvhIPzeW5GxGzqjmGHinnU/qbNAoLM9czdpci0PCbMysbEJ2pbJrZs7ZjaReWSnr/THkeLPQwqGOM9xw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.36 <0.3.0 || >=0.3.40 < 0.4.0'
