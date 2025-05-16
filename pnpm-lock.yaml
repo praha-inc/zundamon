@@ -27,8 +27,8 @@ dependencies:
     specifier: 1.6.0
     version: 1.6.0
   langchain:
-    specifier: 0.3.25
-    version: 0.3.25(@langchain/core@0.3.56)(cheerio@1.0.0)
+    specifier: 0.3.26
+    version: 0.3.26(@langchain/core@0.3.56)(cheerio@1.0.0)
   slack-edge:
     specifier: 0.14.4
     version: 0.14.4
@@ -2709,8 +2709,8 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
-  /langchain@0.3.25(@langchain/core@0.3.56)(cheerio@1.0.0):
-    resolution: {integrity: sha512-ADUE7zfW4C72YJ+jdDU2xtHly8oigPaRMzP40GBU24vRUtDY1tHxWjKuAVkzXvrciV3GNeMZVRYBYWPt5EoZ5Q==}
+  /langchain@0.3.26(@langchain/core@0.3.56)(cheerio@1.0.0):
+    resolution: {integrity: sha512-W/9phB4wiAnj+PnpMWmv/ptIp7i5ygY2aK8yjKlxccHPbaNeMoy7njzFz8d0/xfcPyA3MvG4AuZnJ1j3/E2/Ig==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/anthropic': '*'
@@ -2774,7 +2774,7 @@ packages:
       js-tiktoken: 1.0.15
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.3.17
+      langsmith: 0.3.29
       openapi-types: 12.1.3
       p-retry: 4.6.2
       uuid: 10.0.0
@@ -2784,23 +2784,6 @@ packages:
     transitivePeerDependencies:
       - encoding
       - openai
-    dev: false
-
-  /langsmith@0.3.17:
-    resolution: {integrity: sha512-7BCji5uic1dD6Z6sAOhZSdzORLsgEMBA4WAkJeO6VUKuc452sfi472XSqTTGHOhn6C4hSqNrnMugVLqWhxdEqA==}
-    peerDependencies:
-      openai: '*'
-    peerDependenciesMeta:
-      openai:
-        optional: true
-    dependencies:
-      '@types/uuid': 10.0.0
-      chalk: 4.1.2
-      console-table-printer: 2.12.1
-      p-queue: 6.6.2
-      p-retry: 4.6.2
-      semver: 7.6.3
-      uuid: 10.0.0
     dev: false
 
   /langsmith@0.3.29:
