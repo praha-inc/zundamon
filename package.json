@@ -26,7 +26,7 @@
     "@types/url-regex-safe": "1.0.2",
     "eslint": "8.57.1",
     "typescript": "5.8.3",
-    "wrangler": "3.114.8"
+    "wrangler": "3.114.9"
   },
   "packageManager": "pnpm@8.15.9",
   "pnpm": {
