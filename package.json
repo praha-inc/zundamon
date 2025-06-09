@@ -16,7 +16,7 @@
     "zod": "3.25.56"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20250529.0",
+    "@cloudflare/workers-types": "4.20250607.0",
     "@praha/eslint-config-common": "3.0.6",
     "@praha/eslint-config-definer": "1.0.5",
     "@praha/eslint-config-javascript": "2.0.7",
