@@ -13,7 +13,7 @@
     "langchain": "0.3.27",
     "slack-edge": "0.14.4",
     "slack-web-api-client": "0.13.5",
-    "zod": "3.25.57"
+    "zod": "3.25.58"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20250610.0",
