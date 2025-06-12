@@ -27,8 +27,8 @@ dependencies:
     specifier: 1.6.0
     version: 1.6.0
   langchain:
-    specifier: 0.3.27
-    version: 0.3.27(@langchain/core@0.3.58)(cheerio@1.1.0)
+    specifier: 0.3.28
+    version: 0.3.28(@langchain/core@0.3.58)(cheerio@1.1.0)
   slack-edge:
     specifier: 0.14.4
     version: 0.14.4
@@ -2714,15 +2714,15 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
-  /langchain@0.3.27(@langchain/core@0.3.58)(cheerio@1.1.0):
-    resolution: {integrity: sha512-XfOuXetMSpkS11Mt6YJkDmvuSGTMPUsks5DJz4RCZ3y2dcbLkOe5kecjx2SWVJYqQIqcMMwsjsve3/ZjnRe7rQ==}
+  /langchain@0.3.28(@langchain/core@0.3.58)(cheerio@1.1.0):
+    resolution: {integrity: sha512-h4GGlBJNGU/Sj2PipW9kL+ewj7To3c+SnnNKH3HZaVHEqGPMHVB96T1lLjtCLcZCyUfabMr/zFIkLNI4War+Xg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/anthropic': '*'
       '@langchain/aws': '*'
       '@langchain/cerebras': '*'
       '@langchain/cohere': '*'
-      '@langchain/core': '>=0.2.21 <0.4.0'
+      '@langchain/core': '>=0.3.58 <0.4.0'
       '@langchain/deepseek': '*'
       '@langchain/google-genai': '*'
       '@langchain/google-vertexai': '*'
@@ -2785,7 +2785,6 @@ packages:
       uuid: 10.0.0
       yaml: 2.3.4
       zod: 3.25.58
-      zod-to-json-schema: 3.22.4(zod@3.25.58)
     transitivePeerDependencies:
       - encoding
       - openai
