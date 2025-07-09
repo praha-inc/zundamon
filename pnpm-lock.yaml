@@ -15,8 +15,8 @@ dependencies:
     specifier: 0.3.62
     version: 0.3.62
   '@langchain/langgraph':
-    specifier: 0.3.6
-    version: 0.3.6(@langchain/core@0.3.62)
+    specifier: 0.3.7
+    version: 0.3.7(@langchain/core@0.3.62)
   '@tryfabric/mack':
     specifier: 1.2.1
     version: 1.2.1
@@ -712,17 +712,29 @@ packages:
       uuid: 10.0.0
     dev: false
 
-  /@langchain/langgraph-sdk@0.0.32:
-    resolution: {integrity: sha512-KQyM9kLO7T6AxwNrceajH7JOybP3pYpvUPnhiI2rrVndI1WyZUJ1eVC1e722BVRAPi6o+WcoTT4uMSZVinPOtA==}
+  /@langchain/langgraph-sdk@0.0.90(@langchain/core@0.3.62):
+    resolution: {integrity: sha512-/RwdoGVsJvvzb9uvFzifUbaSB6iKKhmozS5N2DrBqs38HgvJGs0xDZJVSkmvF2fKd4mo/1424zzXcdNgGUATMg==}
+    peerDependencies:
+      '@langchain/core': '>=0.2.31 <0.4.0'
+      react: ^18 || ^19
+      react-dom: ^18 || ^19
+    peerDependenciesMeta:
+      '@langchain/core':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
     dependencies:
+      '@langchain/core': 0.3.62
       '@types/json-schema': 7.0.15
       p-queue: 6.6.2
       p-retry: 4.6.2
       uuid: 9.0.1
     dev: false
 
-  /@langchain/langgraph@0.3.6(@langchain/core@0.3.62):
-    resolution: {integrity: sha512-TMRUEPb/eC5mS8XdY6gwLGX2druwFDxSWUQDXHHNsbrqhIrL3BPlw+UumjcKBQ8wvhk3gEspg4aHXGq8mAqbRA==}
+  /@langchain/langgraph@0.3.7(@langchain/core@0.3.62):
+    resolution: {integrity: sha512-Cc0VUtuwFziCNqTNvD1QUNpMzhe9r8tTDIxFgpCwbF8oTNXxZ1tcd/iY9wr7gV5WhZm8DHEpZf3h4z3gFNeNMA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.3.58 < 0.4.0'
@@ -733,9 +745,12 @@ packages:
     dependencies:
       '@langchain/core': 0.3.62
       '@langchain/langgraph-checkpoint': 0.0.18(@langchain/core@0.3.62)
-      '@langchain/langgraph-sdk': 0.0.32
+      '@langchain/langgraph-sdk': 0.0.90(@langchain/core@0.3.62)
       uuid: 10.0.0
       zod: 3.25.75
+    transitivePeerDependencies:
+      - react
+      - react-dom
     dev: false
 
   /@langchain/openai@0.3.14(@langchain/core@0.3.62):
