@@ -15,8 +15,8 @@ dependencies:
     specifier: 0.3.62
     version: 0.3.62
   '@langchain/langgraph':
-    specifier: 0.3.7
-    version: 0.3.7(@langchain/core@0.3.62)
+    specifier: 0.3.8
+    version: 0.3.8(@langchain/core@0.3.62)
   '@tryfabric/mack':
     specifier: 1.2.1
     version: 1.2.1
@@ -712,8 +712,8 @@ packages:
       uuid: 10.0.0
     dev: false
 
-  /@langchain/langgraph-sdk@0.0.90(@langchain/core@0.3.62):
-    resolution: {integrity: sha512-/RwdoGVsJvvzb9uvFzifUbaSB6iKKhmozS5N2DrBqs38HgvJGs0xDZJVSkmvF2fKd4mo/1424zzXcdNgGUATMg==}
+  /@langchain/langgraph-sdk@0.0.92(@langchain/core@0.3.62):
+    resolution: {integrity: sha512-YL3uPo4At0q96Jk1v7uPctpf/NuKYlbHuQzuS03lQDvvzkLNBmw6ZRKr8SFmgZwmiHz2CNMfBP21kmb9aq/9Ug==}
     peerDependencies:
       '@langchain/core': '>=0.2.31 <0.4.0'
       react: ^18 || ^19
@@ -733,8 +733,8 @@ packages:
       uuid: 9.0.1
     dev: false
 
-  /@langchain/langgraph@0.3.7(@langchain/core@0.3.62):
-    resolution: {integrity: sha512-Cc0VUtuwFziCNqTNvD1QUNpMzhe9r8tTDIxFgpCwbF8oTNXxZ1tcd/iY9wr7gV5WhZm8DHEpZf3h4z3gFNeNMA==}
+  /@langchain/langgraph@0.3.8(@langchain/core@0.3.62):
+    resolution: {integrity: sha512-JOtYNMa7BixzXrAtV76x1lS2+Blt4WLcbFUWwtiEqTMzwNg00fSvUQ6FaPeootL66iYamg67AVq12PerqMrelw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.3.58 < 0.4.0'
@@ -745,7 +745,7 @@ packages:
     dependencies:
       '@langchain/core': 0.3.62
       '@langchain/langgraph-checkpoint': 0.0.18(@langchain/core@0.3.62)
-      '@langchain/langgraph-sdk': 0.0.90(@langchain/core@0.3.62)
+      '@langchain/langgraph-sdk': 0.0.92(@langchain/core@0.3.62)
       uuid: 10.0.0
       zod: 3.25.76
     transitivePeerDependencies:
