@@ -8,7 +8,7 @@
     "@langchain/core": "0.3.66",
     "@langchain/langgraph": "0.3.10",
     "@tryfabric/mack": "1.2.1",
-    "cheerio": "1.1.0",
+    "cheerio": "1.1.2",
     "dedent": "1.6.0",
     "langchain": "0.3.30",
     "slack-edge": "0.14.4",
