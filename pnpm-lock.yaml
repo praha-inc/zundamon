@@ -10,13 +10,13 @@ overrides:
 dependencies:
   '@langchain/cloudflare':
     specifier: 0.1.1
-    version: 0.1.1(@langchain/core@0.3.72)
+    version: 0.1.1(@langchain/core@0.3.75)
   '@langchain/core':
-    specifier: 0.3.72
-    version: 0.3.72
+    specifier: 0.3.75
+    version: 0.3.75
   '@langchain/langgraph':
     specifier: 0.4.7
-    version: 0.4.7(@langchain/core@0.3.72)
+    version: 0.4.7(@langchain/core@0.3.75)
   '@tryfabric/mack':
     specifier: 1.2.1
     version: 1.2.1
@@ -28,7 +28,7 @@ dependencies:
     version: 1.6.0
   langchain:
     specifier: 0.3.31
-    version: 0.3.31(@langchain/core@0.3.72)(cheerio@1.1.2)
+    version: 0.3.31(@langchain/core@0.3.75)(cheerio@1.1.2)
   slack-edge:
     specifier: 0.14.4
     version: 0.14.4
@@ -672,18 +672,18 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@langchain/cloudflare@0.1.1(@langchain/core@0.3.72):
+  /@langchain/cloudflare@0.1.1(@langchain/core@0.3.75):
     resolution: {integrity: sha512-M3az7HAoSYoWpLBrziRcJywUpJOAdDJejl4EucW0ZX/mCR6HaO1c2nYhICEcvkNsd//fhRpAkI5uLF+oW6ptGw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
     dependencies:
-      '@langchain/core': 0.3.72
+      '@langchain/core': 0.3.75
       uuid: 10.0.0
     dev: false
 
-  /@langchain/core@0.3.72:
-    resolution: {integrity: sha512-WsGWVZYnlKffj2eEfDocPNiaTRoxyYiLSQdQ7oxZvxGZBqo/90vpjbC33UGK1uPNBM4kT+pkdaol/MnvKUh8TQ==}
+  /@langchain/core@0.3.75:
+    resolution: {integrity: sha512-kTyBS0DTeD0JYa9YH5lg6UdDbHmvplk3t9PCjP5jDQZCK5kPe2aDFToqdiCaLzZg8RzzM+clXLVyJtPTE8bZ2Q==}
     engines: {node: '>=18'}
     dependencies:
       '@cfworker/json-schema': 4.0.3
@@ -691,7 +691,7 @@ packages:
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.15
-      langsmith: 0.3.46
+      langsmith: 0.3.67
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -705,17 +705,17 @@ packages:
       - openai
     dev: false
 
-  /@langchain/langgraph-checkpoint@0.1.0(@langchain/core@0.3.72):
+  /@langchain/langgraph-checkpoint@0.1.0(@langchain/core@0.3.75):
     resolution: {integrity: sha512-7oY5b0VQSxcV3DgoHdXiCgBhEzml/ZjZfKNeuq6oZ3ggcdUICa/fzrIBbFju6gxPU8ly93s0OsjF4yURnHw70Q==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.31 <0.4.0'
     dependencies:
-      '@langchain/core': 0.3.72
+      '@langchain/core': 0.3.75
       uuid: 10.0.0
     dev: false
 
-  /@langchain/langgraph-sdk@0.0.112(@langchain/core@0.3.72):
+  /@langchain/langgraph-sdk@0.0.112(@langchain/core@0.3.75):
     resolution: {integrity: sha512-/9W5HSWCqYgwma6EoOspL4BGYxGxeJP6lIquPSF4FA0JlKopaUv58ucZC3vAgdJyCgg6sorCIV/qg7SGpEcCLw==}
     peerDependencies:
       '@langchain/core': '>=0.2.31 <0.4.0'
@@ -729,14 +729,14 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@langchain/core': 0.3.72
+      '@langchain/core': 0.3.75
       '@types/json-schema': 7.0.15
       p-queue: 6.6.2
       p-retry: 4.6.2
       uuid: 9.0.1
     dev: false
 
-  /@langchain/langgraph@0.4.7(@langchain/core@0.3.72):
+  /@langchain/langgraph@0.4.7(@langchain/core@0.3.75):
     resolution: {integrity: sha512-BQ/c+H61Nhflyjp7rnsc58Bz4mS9NwVDujs9kod3RKmY1vVh72JoAJi7KkpGBOpydAqi+PwfsGnHXEGjX6iteA==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -746,9 +746,9 @@ packages:
       zod-to-json-schema:
         optional: true
     dependencies:
-      '@langchain/core': 0.3.72
-      '@langchain/langgraph-checkpoint': 0.1.0(@langchain/core@0.3.72)
-      '@langchain/langgraph-sdk': 0.0.112(@langchain/core@0.3.72)
+      '@langchain/core': 0.3.75
+      '@langchain/langgraph-checkpoint': 0.1.0(@langchain/core@0.3.75)
+      '@langchain/langgraph-sdk': 0.0.112(@langchain/core@0.3.75)
       uuid: 10.0.0
       zod: 3.25.76
     transitivePeerDependencies:
@@ -756,13 +756,13 @@ packages:
       - react-dom
     dev: false
 
-  /@langchain/openai@0.3.14(@langchain/core@0.3.72):
+  /@langchain/openai@0.3.14(@langchain/core@0.3.75):
     resolution: {integrity: sha512-lNWjUo1tbvsss45IF7UQtMu1NJ6oUKvhgPYWXnX9f/d6OmuLu7D99HQ3Y88vLcUo9XjjOy417olYHignMduMjA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.26 <0.4.0'
     dependencies:
-      '@langchain/core': 0.3.72
+      '@langchain/core': 0.3.75
       js-tiktoken: 1.0.15
       openai: 4.73.1(zod@3.25.76)
       zod: 3.25.76
@@ -771,13 +771,13 @@ packages:
       - encoding
     dev: false
 
-  /@langchain/textsplitters@0.1.0(@langchain/core@0.3.72):
+  /@langchain/textsplitters@0.1.0(@langchain/core@0.3.75):
     resolution: {integrity: sha512-djI4uw9rlkAb5iMhtLED+xJebDdAG935AdP4eRTB02R7OB/act55Bj9wsskhZsvuyQRpO4O1wQOp85s6T6GWmw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
     dependencies:
-      '@langchain/core': 0.3.72
+      '@langchain/core': 0.3.75
       js-tiktoken: 1.0.15
     dev: false
 
@@ -2732,7 +2732,7 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
-  /langchain@0.3.31(@langchain/core@0.3.72)(cheerio@1.1.2):
+  /langchain@0.3.31(@langchain/core@0.3.75)(cheerio@1.1.2):
     resolution: {integrity: sha512-C7n7WGa44RytsuxEtGcArVcXidRqzjl6UWQxaG3NdIw4gIqErWoOlNC1qADAa04H5JAOARxuE6S99+WNXB/rzA==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -2790,9 +2790,9 @@ packages:
       typeorm:
         optional: true
     dependencies:
-      '@langchain/core': 0.3.72
-      '@langchain/openai': 0.3.14(@langchain/core@0.3.72)
-      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.72)
+      '@langchain/core': 0.3.75
+      '@langchain/openai': 0.3.14(@langchain/core@0.3.75)
+      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.75)
       cheerio: 1.1.2
       js-tiktoken: 1.0.15
       js-yaml: 4.1.0
@@ -2813,6 +2813,32 @@ packages:
 
   /langsmith@0.3.46:
     resolution: {integrity: sha512-Hhi4/cMjhWIGpu0DW5eQrXBbeeKQWPYYQyJCYzhFjod+xinMry4i8QR0gxrrgjGOgfMuU6nyK79YqjGTEPVbDA==}
+    peerDependencies:
+      '@opentelemetry/api': '*'
+      '@opentelemetry/exporter-trace-otlp-proto': '*'
+      '@opentelemetry/sdk-trace-base': '*'
+      openai: '*'
+    peerDependenciesMeta:
+      '@opentelemetry/api':
+        optional: true
+      '@opentelemetry/exporter-trace-otlp-proto':
+        optional: true
+      '@opentelemetry/sdk-trace-base':
+        optional: true
+      openai:
+        optional: true
+    dependencies:
+      '@types/uuid': 10.0.0
+      chalk: 4.1.2
+      console-table-printer: 2.12.1
+      p-queue: 6.6.2
+      p-retry: 4.6.2
+      semver: 7.6.3
+      uuid: 10.0.0
+    dev: false
+
+  /langsmith@0.3.67:
+    resolution: {integrity: sha512-l4y3RmJ9yWF5a29fLg3eWZQxn6Q6dxTOgLGgQHzPGZHF3NUynn+A+airYIe/Yt4rwjGbuVrABAPsXBkVu/Hi7g==}
     peerDependencies:
       '@opentelemetry/api': '*'
       '@opentelemetry/exporter-trace-otlp-proto': '*'
