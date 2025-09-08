@@ -9,8 +9,8 @@ overrides:
 
 dependencies:
   '@langchain/cloudflare':
-    specifier: 0.1.0
-    version: 0.1.0(@langchain/core@0.3.72)
+    specifier: 0.1.1
+    version: 0.1.1(@langchain/core@0.3.72)
   '@langchain/core':
     specifier: 0.3.72
     version: 0.3.72
@@ -672,8 +672,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@langchain/cloudflare@0.1.0(@langchain/core@0.3.72):
-    resolution: {integrity: sha512-qCbYZkH9Faumcn8djd8UZThO8HHj10uoBJwOb3ucyM0tI3E42jbYlBjkMJpTMzc4qpzxF/86fJSqTaH+ii2hrw==}
+  /@langchain/cloudflare@0.1.1(@langchain/core@0.3.72):
+    resolution: {integrity: sha512-M3az7HAoSYoWpLBrziRcJywUpJOAdDJejl4EucW0ZX/mCR6HaO1c2nYhICEcvkNsd//fhRpAkI5uLF+oW6ptGw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
