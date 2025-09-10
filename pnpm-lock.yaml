@@ -24,8 +24,8 @@ dependencies:
     specifier: 1.1.2
     version: 1.1.2
   dedent:
-    specifier: 1.6.0
-    version: 1.6.0
+    specifier: 1.7.0
+    version: 1.7.0
   langchain:
     specifier: 0.3.33
     version: 0.3.33(@langchain/core@0.3.75)(cheerio@1.1.2)
@@ -1576,8 +1576,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /dedent@1.6.0:
-    resolution: {integrity: sha512-F1Z+5UCFpmQUzJa11agbyPVMbpgT/qA3/SKyJ1jyBgm7dUcUEa8v9JwDkerSQXfakBwFljIxhOJqGkjUwZ9FSA==}
+  /dedent@1.7.0:
+    resolution: {integrity: sha512-HGFtf8yhuhGhqO07SV79tRp+br4MnbdjeVxotpn1QBl30pcLLCQjX5b2295ll0fv8RKDKsmWYrl05usHM9CewQ==}
     peerDependencies:
       babel-plugin-macros: ^3.1.0
     peerDependenciesMeta:
