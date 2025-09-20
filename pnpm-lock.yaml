@@ -36,8 +36,8 @@ dependencies:
     specifier: 0.13.5
     version: 0.13.5
   zod:
-    specifier: 3.25.76
-    version: 3.25.76
+    specifier: 4.1.10
+    version: 4.1.10
 
 devDependencies:
   '@cloudflare/workers-types':
@@ -3975,4 +3975,8 @@ packages:
 
   /zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
+    dev: false
+
+  /zod@4.1.10:
+    resolution: {integrity: sha512-XuQhz4bDMHS66VWMD/ZQI+BT4DYbOYGjhV/sIlSA4vAzMuxjLT31Oa7m6Z7lEdCGDkt1VCt0x4Ro2PHonEdKFA==}
     dev: false
