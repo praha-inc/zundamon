@@ -59,8 +59,8 @@ devDependencies:
     specifier: 2.0.8
     version: 2.0.8(@praha/eslint-config-common@3.0.6)(@praha/eslint-config-javascript@2.0.7)(eslint-plugin-import@2.29.1)(eslint@8.57.1)(typescript@5.9.2)
   '@tsconfig/strictest':
-    specifier: 2.0.5
-    version: 2.0.5
+    specifier: 2.0.6
+    version: 2.0.6
   '@types/url-regex-safe':
     specifier: 1.0.2
     version: 1.0.2
@@ -982,8 +982,8 @@ packages:
       marked: 4.3.0
     dev: false
 
-  /@tsconfig/strictest@2.0.5:
-    resolution: {integrity: sha512-ec4tjL2Rr0pkZ5hww65c+EEPYwxOi4Ryv+0MtjeaSQRJyq322Q27eOQiFbuNgw2hpL4hB1/W/HBGk3VKS43osg==}
+  /@tsconfig/strictest@2.0.6:
+    resolution: {integrity: sha512-tPOhmDhIUcDjvpDDYyiUdssP84Eqm7n5KxJe5J3/g+s6xoDIPAf+SIn06dhw7VkhxIvLOnhDDrX7tsqMHNEhDg==}
     dev: true
 
   /@types/eslint@8.56.12:
