@@ -71,8 +71,8 @@ devDependencies:
     specifier: 5.9.3
     version: 5.9.3
   wrangler:
-    specifier: 3.114.14
-    version: 3.114.14(@cloudflare/workers-types@4.20251004.0)
+    specifier: 3.114.15
+    version: 3.114.15(@cloudflare/workers-types@4.20251004.0)
 
 packages:
 
@@ -2915,8 +2915,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /miniflare@3.20250718.1:
-    resolution: {integrity: sha512-9QAOHVKIVHmnQ1dJT9Fls8aVA8R5JjEizzV889Dinq/+bEPltqIepCvm9Z+fbNUgLvV7D/H1NUk8VdlLRgp9Wg==}
+  /miniflare@3.20250718.2:
+    resolution: {integrity: sha512-cW/NQPBKc+fb0FwcEu+z/v93DZd+/6q/AF0iR0VFELtNPOsCvLalq6ndO743A7wfZtFxMxvuDQUXNx3aKQhOwA==}
     engines: {node: '>=16.13'}
     hasBin: true
     dependencies:
@@ -3897,8 +3897,8 @@ packages:
       '@cloudflare/workerd-windows-64': 1.20250718.0
     dev: true
 
-  /wrangler@3.114.14(@cloudflare/workers-types@4.20251004.0):
-    resolution: {integrity: sha512-zytHJn5+S47sqgUHi71ieSSP44yj9mKsj0sTUCsY+Tw5zbH8EzB1d9JbRk2KHg7HFM1WpoTI7518EExPGenAmg==}
+  /wrangler@3.114.15(@cloudflare/workers-types@4.20251004.0):
+    resolution: {integrity: sha512-OpGikaV6t7AGXZImtGnVXI8WUnqBMFBCQcZzqKmQi0T/pZ5h8iSKhEZf7ItVB8bAG56yswHnWWYyANWF/Jj/JA==}
     engines: {node: '>=16.17.0'}
     hasBin: true
     peerDependencies:
@@ -3914,7 +3914,7 @@ packages:
       '@esbuild-plugins/node-modules-polyfill': 0.2.2(esbuild@0.17.19)
       blake3-wasm: 2.1.5
       esbuild: 0.17.19
-      miniflare: 3.20250718.1
+      miniflare: 3.20250718.2
       path-to-regexp: 6.3.0
       unenv: 2.0.0-rc.14
       workerd: 1.20250718.0
