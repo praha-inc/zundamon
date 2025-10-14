@@ -28,7 +28,7 @@
     "typescript": "5.9.3",
     "wrangler": "3.114.15"
   },
-  "packageManager": "pnpm@8.15.9",
+  "packageManager": "pnpm@10.18.3",
   "pnpm": {
     "overrides": {
       "tsconfig-paths": "4.2.0"
