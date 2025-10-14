@@ -30,8 +30,8 @@ dependencies:
     specifier: 0.3.36
     version: 0.3.36(@langchain/core@0.3.78)(cheerio@1.1.2)
   slack-edge:
-    specifier: 0.14.4
-    version: 0.14.4
+    specifier: 1.3.12
+    version: 1.3.12
   slack-web-api-client:
     specifier: 0.13.5
     version: 0.13.5
@@ -3486,14 +3486,18 @@ packages:
     resolution: {integrity: sha512-xMO/8eNREtaROt7tJvWJqHBDTMFN4eiQ5I4JRMuilwfnFcV5W9u7RUkueNkdw0jPqGMX36iCywelS5yilTuOxg==}
     dev: false
 
-  /slack-edge@0.14.4:
-    resolution: {integrity: sha512-6KwwpZ5TTkD/YQrXuPCSK2Zcui/bFFnriF1QGzvPw6pjaq5HQgL3ccUXYX70Lc3RmXs6ZTJ/ccs6ZEYORyEsoQ==}
+  /slack-edge@1.3.12:
+    resolution: {integrity: sha512-9+He610rMeEeZawJY2UB4MGqQ4YwqOJXa+g5z0j26JCguFPv3MkByLiYsIf9fJMsCega4863RqzLCQ61AvCPAA==}
     dependencies:
-      slack-web-api-client: 0.13.5
+      slack-web-api-client: 1.1.7
     dev: false
 
   /slack-web-api-client@0.13.5:
     resolution: {integrity: sha512-h3+jY86LRY+nXP6kQmaqUSsIqVYziiVwBnmvzEXh+42Bn0fpuGIUFf2I6zEXtvjJLoVK5WczmrLewWlAWuX2/Q==}
+    dev: false
+
+  /slack-web-api-client@1.1.7:
+    resolution: {integrity: sha512-R36tRp8JcBTHXHMs60sNJTHbUrfj/+5X3ezSNbdoNXTdcRGPM8NZ6ANG3MeZEROxYEOm665Ya7QNfp/xmskQbw==}
     dev: false
 
   /slash@3.0.0:
