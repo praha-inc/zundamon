@@ -21,14 +21,14 @@ dependencies:
     specifier: 1.2.1
     version: 1.2.1
   cheerio:
-    specifier: 1.1.2
-    version: 1.1.2
+    specifier: 1.2.0
+    version: 1.2.0
   dedent:
     specifier: 1.7.2
     version: 1.7.2
   langchain:
     specifier: 0.3.36
-    version: 0.3.36(@langchain/core@0.3.80)(cheerio@1.1.2)
+    version: 0.3.36(@langchain/core@0.3.80)(cheerio@1.2.0)
   slack-edge:
     specifier: 0.14.4
     version: 0.14.4
@@ -1538,8 +1538,8 @@ packages:
       domutils: 3.2.2
     dev: false
 
-  /cheerio@1.1.2:
-    resolution: {integrity: sha512-IkxPpb5rS/d1IiLbHMgfPuS0FgiWTtFIm/Nj+2woXDLTZ7fOT2eqzgYbdMlLweqlHbsZjxEChoVK+7iph7jyQg==}
+  /cheerio@1.2.0:
+    resolution: {integrity: sha512-WDrybc/gKFpTYQutKIK6UvfcuxijIZfMfXaYm8NMsPQxSYvf+13fXUJ4rztGGbJcBQ/GF55gvrZ0Bc0bj/mqvg==}
     engines: {node: '>=20.18.1'}
     dependencies:
       cheerio-select: 2.1.0
@@ -2890,7 +2890,7 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
-  /langchain@0.3.36(@langchain/core@0.3.80)(cheerio@1.1.2):
+  /langchain@0.3.36(@langchain/core@0.3.80)(cheerio@1.2.0):
     resolution: {integrity: sha512-PqC19KChFF0QlTtYDFgfEbIg+SCnCXox29G8tY62QWfj9bOW7ew2kgWmPw5qoHLOTKOdQPvXET20/1Pdq8vAtQ==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -2951,7 +2951,7 @@ packages:
       '@langchain/core': 0.3.80
       '@langchain/openai': 0.6.17(@langchain/core@0.3.80)
       '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.80)
-      cheerio: 1.1.2
+      cheerio: 1.2.0
       js-tiktoken: 1.0.21
       js-yaml: 4.1.1
       jsonpointer: 5.0.1
