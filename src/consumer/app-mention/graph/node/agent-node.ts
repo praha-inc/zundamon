@@ -1,5 +1,4 @@
 import { SystemMessage, HumanMessage } from '@langchain/core/messages';
-import { convertToOpenAIFunction } from '@langchain/core/utils/function_calling';
 import dedent from 'dedent';
 
 import { repliesToText } from '../../helper/replies-to-history';
@@ -7,7 +6,7 @@ import { repliesToText } from '../../helper/replies-to-history';
 import type { Reply } from '../../type/reply';
 import type { GraphNode } from '../type/graph-node';
 import type { StructuredTool } from '@langchain/core/tools';
-import type { ChatOpenAI } from 'langchain/chat_models/openai';
+import type { ChatOpenAI } from '@langchain/openai';
 
 export type CreateAgentNodeParameters = {
   chatModel: ChatOpenAI;
@@ -20,9 +19,7 @@ export const createAgentNode = ({
   tools,
   replies,
 }: CreateAgentNodeParameters): GraphNode => {
-  const model = chatModel.bind({
-    functions: tools.map((tool) => convertToOpenAIFunction(tool)),
-  });
+  const model = chatModel.bindTools(tools);
 
   return {
     name: 'agent',

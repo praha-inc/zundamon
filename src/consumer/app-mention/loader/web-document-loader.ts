@@ -1,10 +1,10 @@
+import { BaseDocumentLoader } from '@langchain/core/document_loaders/base';
+import { Document } from '@langchain/core/documents';
 import { AsyncCaller } from '@langchain/core/utils/async_caller';
 import { load } from 'cheerio';
-import { Document } from 'langchain/document';
-import { BaseDocumentLoader } from 'langchain/document_loaders/base';
 
+import type { DocumentLoader } from '@langchain/core/document_loaders/base';
 import type { AsyncCallerParams } from '@langchain/core/utils/async_caller';
-import type { DocumentLoader } from 'langchain/document_loaders/base';
 
 const concatUrl = (url: string, path: string) => {
   try {

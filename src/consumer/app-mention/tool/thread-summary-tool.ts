@@ -1,14 +1,14 @@
-import { Document } from 'langchain/document';
-import { DynamicStructuredTool } from 'langchain/tools';
-import { MemoryVectorStore } from 'langchain/vectorstores/memory';
-import { z } from 'zod';
+import { MemoryVectorStore } from '@langchain/classic/vectorstores/memory';
+import { Document } from '@langchain/core/documents';
+import { DynamicStructuredTool } from '@langchain/core/tools';
+import { z } from 'zod/v4';
 
 import { createMapReduceSummarizationChain } from '../chain/map-reduce-summarization-chain';
 
 import type { Reply } from '../type/reply';
-import type { BaseLanguageModel } from 'langchain/base_language';
-import type { Embeddings } from 'langchain/embeddings/base';
-import type { ToolParams } from 'langchain/tools';
+import type { Embeddings } from '@langchain/core/embeddings';
+import type { BaseLanguageModel } from '@langchain/core/language_models/base';
+import type { ToolParams } from '@langchain/core/tools';
 
 export interface ThreadSummaryToolParameters extends ToolParams {
   summaryModel: BaseLanguageModel;
