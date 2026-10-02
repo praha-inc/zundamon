@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "scripts": {
+    "build": "wrangler deploy --dry-run --outdir=dist",
+    "lint:code": "oxlint",
+    "lint:type": "tsc --noEmit"
+  },
   "dependencies": {
     "@langchain/classic": "1.0.51",
     "@langchain/cloudflare": "1.1.0",

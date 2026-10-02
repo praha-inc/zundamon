@@ -10,6 +10,7 @@ logs
 .pnpm-debug.log*
 
 # Typescript
+dist
 *.tsbuildinfo
 
 # Wrangler
