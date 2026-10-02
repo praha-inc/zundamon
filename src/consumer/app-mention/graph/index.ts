@@ -2,7 +2,6 @@ import { Annotation, END, START, StateGraph } from '@langchain/langgraph';
 import { toolsCondition } from '@langchain/langgraph/prebuilt';
 
 import { createAgentNode } from './node/agent-node';
-import { createConversationStoreNode } from './node/conversation-store-node';
 import { createToolNode } from './node/tool-node';
 import { createZundanizeNode } from './node/zundanize-node';
 import { createCalculatorTool } from '../tool/calculator-tool';
@@ -49,7 +48,6 @@ export const createGraph = ({
   const agentNode = createAgentNode({ chatModel, tools, replies });
   const toolNode = createToolNode({ tools });
   const zundanizeNode = createZundanizeNode({ zundanizeModel });
-  const conversationStoreNode = createConversationStoreNode({ conversationVectorStore, replies });
 
   return new StateGraph(Annotation.Root({
     context: Annotation<GraphChannels['context']>,
@@ -61,14 +59,12 @@ export const createGraph = ({
     .addNode(agentNode.name, agentNode.action)
     .addNode(toolNode.name, toolNode.action)
     .addNode(zundanizeNode.name, zundanizeNode.action)
-    .addNode(conversationStoreNode.name, conversationStoreNode.action)
     .addEdge(START, agentNode.name)
     .addConditionalEdges(agentNode.name, toolsCondition, {
       tools: toolNode.name,
       [END]: zundanizeNode.name,
     })
     .addEdge(toolNode.name, agentNode.name)
-    .addEdge(zundanizeNode.name, conversationStoreNode.name)
-    .addEdge(conversationStoreNode.name, END)
+    .addEdge(zundanizeNode.name, END)
     .compile();
 };
