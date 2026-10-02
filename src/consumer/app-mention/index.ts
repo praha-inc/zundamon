@@ -13,7 +13,7 @@ import { getReplies } from './helper/get-replies';
 
 import type { AppMentionEvent } from './event';
 import type { Env } from '../../type/env';
-import type { AnyMessageBlock } from 'slack-web-api-client';
+import type { AnyMessageBlock } from 'slack-edge';
 
 export const appMentionEventHandler = async (
   env: Env,
