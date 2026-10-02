@@ -6,6 +6,7 @@ import { appMentionHandler } from './event/app-mention';
 import type { Env } from './type/env';
 import type { QueueMessageBody } from './type/queue-message-body';
 
+// oxlint-disable-next-line import/no-anonymous-default-export
 export default {
   async fetch(
     request: Request,

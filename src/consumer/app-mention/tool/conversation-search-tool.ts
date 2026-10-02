@@ -34,7 +34,7 @@ export const createConversationSearchTool = ({
     );
 
     const documents = documentWithScores
-      .filter(([_, score]) => threshold < score)
+      .filter(([, score]) => threshold < score)
       .map(([document]) => document);
 
     const chain = createStuffSummarizationChain(summaryModel);

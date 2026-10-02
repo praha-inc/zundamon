@@ -19,7 +19,7 @@ const getAction = (messages: BaseMessage[]): AgentAction => {
   return {
     log: '',
     tool: lastMessage.additional_kwargs.function_call.name,
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    // oxlint-disable-next-line @typescript-eslint/no-unsafe-assignment
     toolInput: JSON.parse(lastMessage.additional_kwargs.function_call.arguments),
   };
 };
@@ -39,13 +39,13 @@ export const createToolNode = ({
     name: 'tool',
     action: async ({ messages }, config) => {
       const action = getAction(messages);
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      // oxlint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const response = await toolExecutor.invoke(action, config);
 
       return {
         messages: [
           new FunctionMessage({
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+            // oxlint-disable-next-line @typescript-eslint/no-unsafe-assignment
             content: response,
             name: action.tool,
           }),
