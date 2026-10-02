@@ -16,6 +16,9 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
+      - name: Generate
+        run: pnpm run generate
+
       - name: Build
         run: pnpm run build
 
@@ -30,6 +33,9 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
+      - name: Generate
+        run: pnpm run generate
+
       - name: Lint
         run: pnpm run lint:code
 
@@ -43,6 +49,9 @@ jobs:
 
       - name: Setup
         uses: ./.github/actions/setup
+
+      - name: Generate
+        run: pnpm run generate
 
       - name: Type
         run: pnpm run lint:type

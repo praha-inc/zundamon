@@ -5,4 +5,7 @@ export default defineConfig({
   extends: [
     standard(),
   ],
+  ignorePatterns: [
+    'worker-configuration.d.ts',
+  ],
 });

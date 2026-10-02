@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "generate": "wrangler types",
     "build": "wrangler deploy --dry-run --outdir=dist",
     "lint:code": "oxlint",
     "lint:type": "tsc --noEmit"
@@ -23,7 +24,6 @@
     "zod": "4.6.5"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20260702.1",
     "@praha/oxlint-config-standard": "1.0.2",
     "@tsconfig/strictest": "2.0.8",
     "@types/node": "24.19.0",
