@@ -20,7 +20,7 @@
     "dedent": "1.7.2",
     "math-expression-evaluator": "2.0.7",
     "slack-edge": "0.14.4",
-    "slack-web-api-client": "0.13.5",
+    "slack-web-api-client": "1.1.14",
     "zod": "4.6.5"
   },
   "devDependencies": {

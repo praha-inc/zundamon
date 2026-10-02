@@ -200,8 +200,8 @@ importers:
         specifier: 0.14.4
         version: 0.14.4
       slack-web-api-client:
-        specifier: 0.13.5
-        version: 0.13.5
+        specifier: 1.1.14
+        version: 1.1.14
       zod:
         specifier: 4.6.5
         version: 4.6.5
@@ -1748,6 +1748,9 @@ packages:
   slack-web-api-client@0.13.5:
     resolution: {integrity: sha512-h3+jY86LRY+nXP6kQmaqUSsIqVYziiVwBnmvzEXh+42Bn0fpuGIUFf2I6zEXtvjJLoVK5WczmrLewWlAWuX2/Q==}
 
+  slack-web-api-client@1.1.14:
+    resolution: {integrity: sha512-6YDCbiAoPz97teNiIxSz7puF5Xa0/83MaNVjYr2GRU4uaxIrYx0iBgNUZe+zlIs1T7qmb/cXWuhNBu5Ny4LVng==}
+
   source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
@@ -3201,6 +3204,8 @@ snapshots:
       slack-web-api-client: 0.13.5
 
   slack-web-api-client@0.13.5: {}
+
+  slack-web-api-client@1.1.14: {}
 
   source-map@0.6.1: {}
 
