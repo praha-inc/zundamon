@@ -56,7 +56,7 @@ export const appMentionEventHandler = async (
       },
     });
 
-    const text = String(result.messages.at(-1)?.content ?? '');
+    const text = result.messages.at(-1)?.text ?? '';
     await slackClient.chat.update({
       channel: message.body.context.channel,
       ts: message.body.context.replyTs,

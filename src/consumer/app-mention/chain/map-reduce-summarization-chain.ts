@@ -1,8 +1,8 @@
+import { loadSummarizationChain } from '@langchain/classic/chains';
+import { PromptTemplate } from '@langchain/core/prompts';
 import dedent from 'dedent';
-import { loadSummarizationChain } from 'langchain/chains';
-import { PromptTemplate } from 'langchain/prompts';
 
-import type { BaseLanguageModel } from 'langchain/base_language';
+import type { BaseLanguageModel } from '@langchain/core/language_models/base';
 
 const combinePrompt = new PromptTemplate({
   template: dedent`

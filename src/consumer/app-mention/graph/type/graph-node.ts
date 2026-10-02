@@ -1,7 +1,9 @@
 import type { GraphChannels } from './graph-channels';
-import type { RunnableLike } from '@langchain/core/runnables';
+import type { RunnableFunc, RunnableInterface } from '@langchain/core/runnables';
 
 export type GraphNode = {
   name: string;
-  action: RunnableLike<GraphChannels, Partial<GraphChannels>>;
+  action:
+    | RunnableFunc<GraphChannels, Partial<GraphChannels>>
+    | RunnableInterface<GraphChannels, Partial<GraphChannels>>;
 };
