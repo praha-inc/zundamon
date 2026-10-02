@@ -2,7 +2,7 @@ import { SystemMessage } from '@langchain/core/messages';
 import dedent from 'dedent';
 
 import type { GraphNode } from '../type/graph-node';
-import type { ChatOpenAI } from 'langchain/chat_models/openai';
+import type { ChatOpenAI } from '@langchain/openai';
 
 export type CreateZundanizeNodeParameters = {
   zundanizeModel: ChatOpenAI;
@@ -52,7 +52,7 @@ export const createZundanizeNode = ({
             - 何かお役に立てることはあるのだ？
  
           Input:
-          ${lastMessage.content}
+          ${lastMessage.text}
         `),
       ], config);
 

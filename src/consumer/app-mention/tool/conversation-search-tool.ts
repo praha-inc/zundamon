@@ -1,11 +1,11 @@
-import { DynamicStructuredTool } from 'langchain/tools';
-import { z } from 'zod';
+import { DynamicStructuredTool } from '@langchain/core/tools';
+import { z } from 'zod/v4';
 
 import { createStuffSummarizationChain } from '../chain/stuff-summarization-chain';
 
-import type { BaseLanguageModel } from 'langchain/base_language';
-import type { ToolParams } from 'langchain/tools';
-import type { VectorStore } from 'langchain/vectorstores/base';
+import type { BaseLanguageModel } from '@langchain/core/language_models/base';
+import type { ToolParams } from '@langchain/core/tools';
+import type { VectorStore } from '@langchain/core/vectorstores';
 
 export interface ConversationSearchToolParameters extends ToolParams {
   summaryModel: BaseLanguageModel;
