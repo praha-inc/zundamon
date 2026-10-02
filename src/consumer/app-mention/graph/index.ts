@@ -1,5 +1,5 @@
-import { AIMessage } from '@langchain/core/messages';
 import { Annotation, END, START, StateGraph } from '@langchain/langgraph';
+import { toolsCondition } from '@langchain/langgraph/prebuilt';
 
 import { createAgentNode } from './node/agent-node';
 import { createConversationStoreNode } from './node/conversation-store-node';
@@ -51,7 +51,7 @@ export const createGraph = ({
   const zundanizeNode = createZundanizeNode({ zundanizeModel });
   const conversationStoreNode = createConversationStoreNode({ conversationVectorStore, replies });
 
-  const workflow = new StateGraph(Annotation.Root({
+  return new StateGraph(Annotation.Root({
     context: Annotation<GraphChannels['context']>,
     messages: Annotation<BaseMessage[]>({
       reducer: (x, y) => [...x, ...y],
@@ -63,17 +63,12 @@ export const createGraph = ({
     .addNode(zundanizeNode.name, zundanizeNode.action)
     .addNode(conversationStoreNode.name, conversationStoreNode.action)
     .addEdge(START, agentNode.name)
-    .addConditionalEdges(agentNode.name, ({ messages }: GraphChannels) => {
-      const lastMessage = messages.at(-1);
-      const hasToolCalls = !!lastMessage && AIMessage.isInstance(lastMessage) && !!lastMessage.tool_calls?.length;
-      return hasToolCalls ? toolNode.name : zundanizeNode.name;
-    }, {
-      [toolNode.name]: toolNode.name,
-      [zundanizeNode.name]: zundanizeNode.name,
+    .addConditionalEdges(agentNode.name, toolsCondition, {
+      tools: toolNode.name,
+      [END]: zundanizeNode.name,
     })
     .addEdge(toolNode.name, agentNode.name)
     .addEdge(zundanizeNode.name, conversationStoreNode.name)
-    .addEdge(conversationStoreNode.name, END);
-
-  return workflow.compile();
+    .addEdge(conversationStoreNode.name, END)
+    .compile();
 };
