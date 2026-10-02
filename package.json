@@ -21,7 +21,7 @@
     "math-expression-evaluator": "2.0.7",
     "slack-edge": "0.14.4",
     "slack-web-api-client": "0.13.5",
-    "zod": "3.25.76"
+    "zod": "4.6.5"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20260702.1",
