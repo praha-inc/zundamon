@@ -1,6 +1,6 @@
 import { DynamicStructuredTool } from '@langchain/core/tools';
 import Mexp from 'math-expression-evaluator';
-import { z } from 'zod/v4';
+import { z } from 'zod';
 
 import type { ToolParams } from '@langchain/core/tools';
 

@@ -1,7 +1,7 @@
 import { MemoryVectorStore } from '@langchain/classic/vectorstores/memory';
 import { Document } from '@langchain/core/documents';
 import { DynamicStructuredTool } from '@langchain/core/tools';
-import { z } from 'zod/v4';
+import { z } from 'zod';
 
 import { createMapReduceSummarizationChain } from '../chain/map-reduce-summarization-chain';
 

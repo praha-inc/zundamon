@@ -1,7 +1,7 @@
 import { MemoryVectorStore } from '@langchain/classic/vectorstores/memory';
 import { DynamicStructuredTool } from '@langchain/core/tools';
 import { RecursiveCharacterTextSplitter } from '@langchain/textsplitters';
-import { z } from 'zod/v4';
+import { z } from 'zod';
 
 import { createMapReduceSummarizationChain } from '../chain/map-reduce-summarization-chain';
 import { WebDocumentLoader } from '../loader/web-document-loader';
