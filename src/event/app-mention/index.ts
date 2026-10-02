@@ -1,7 +1,7 @@
 import { AppMentionEventSchema } from '../../consumer/app-mention/event';
 
 import type { Env } from '../../type/env';
-import type { EventLazyHandler } from 'slack-edge/dist/handler/handler';
+import type { EventLazyHandler } from 'slack-edge';
 
 export const appMentionHandler: EventLazyHandler<'app_mention', Env> = async ({
   env,
