@@ -23,7 +23,7 @@
     "zod": "4.6.5"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20260702.1",
+    "@cloudflare/workers-types": "5.20260929.1",
     "@praha/oxlint-config-standard": "1.0.2",
     "@tsconfig/strictest": "2.0.8",
     "@types/node": "24.19.0",
