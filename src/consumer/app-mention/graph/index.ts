@@ -5,7 +5,6 @@ import { tools } from '@langchain/openai';
 import { createAgentNode } from './node/agent-node';
 import { createToolNode } from './node/tool-node';
 import { createZundanizeNode } from './node/zundanize-node';
-import { createCalculatorTool } from '../tool/calculator-tool';
 import { createConversationSearchTool } from '../tool/conversation-search-tool';
 import { createThreadSummaryTool } from '../tool/thread-summary-tool';
 
@@ -39,13 +38,13 @@ export const createGraph = ({
   replies,
 }: CreateGraphParameters): Graph => {
   const clientTools: StructuredTool[] = [
-    createCalculatorTool(),
     createConversationSearchTool({ summaryModel, conversationVectorStore }),
     createThreadSummaryTool({ summaryModel, embeddingsModel, replies }),
   ];
 
   const serverTools: ServerTool[] = [
     tools.webSearch(),
+    tools.codeInterpreter(),
   ];
 
   const agentNode = createAgentNode({ chatModel, tools: [...clientTools, ...serverTools], replies });

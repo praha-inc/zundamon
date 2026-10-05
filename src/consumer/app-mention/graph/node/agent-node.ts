@@ -17,7 +17,9 @@ export const createAgentNode = ({
   tools,
   replies,
 }: CreateAgentNodeParameters): GraphNode => {
-  const model = chatModel.bindTools(tools);
+  const model = chatModel.bindTools(tools, {
+    include: ['code_interpreter_call.outputs'],
+  });
 
   return {
     name: 'agent',
