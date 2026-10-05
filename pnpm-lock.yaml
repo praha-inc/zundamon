@@ -167,8 +167,8 @@ importers:
   .:
     dependencies:
       '@langchain/classic':
-        specifier: 1.0.51
-        version: 1.0.51(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(cheerio@1.2.0)(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(undici@7.30.0)(ws@8.21.0)
+        specifier: 1.0.52
+        version: 1.0.52(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(cheerio@1.2.0)(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(undici@7.30.0)(ws@8.21.0)
       '@langchain/cloudflare':
         specifier: 1.1.0
         version: 1.1.0(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))
@@ -689,8 +689,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@langchain/classic@1.0.51':
-    resolution: {integrity: sha512-JUITClvLlFtyO889Qza/Up7a8oWbBFpuAT2FX9LpSVePAnNGNtQFE+TBtThiYUZdW7omUX79mon3iTHDiGzr6g==}
+  '@langchain/classic@1.0.52':
+    resolution: {integrity: sha512-PLB9zTBVv/W0xrJR4XBr5C67u39LeGWqMK5l5x4H7p7tzQBeGcp/d5Rn0oz5llFCUWCoLdk1OaGaam4viP50qg==}
     engines: {node: '>=20'}
     peerDependencies:
       '@langchain/core': ^1.2.14
@@ -742,6 +742,12 @@ packages:
 
   '@langchain/openai@1.6.1':
     resolution: {integrity: sha512-J74wtxJP4ln1rm9u9OTR+s6KVq1esfOcZcRLocgP5V1si1dpHx1U4uEvd5Sq9cwzJQKI9EKPw4AgTYuun02ttQ==}
+    engines: {node: '>=22'}
+    peerDependencies:
+      '@langchain/core': ^1.2.14
+
+  '@langchain/openai@1.6.2':
+    resolution: {integrity: sha512-KaXc3zjdM2/E24FdBlsk5NTT2Dyxh46vzCS2by78ehN6G5zdx+4OfVnPvyLl8r2tv2TqQCHpEhImVXgnAZaOvg==}
     engines: {node: '>=22'}
     peerDependencies:
       '@langchain/core': ^1.2.14
@@ -2188,10 +2194,10 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@langchain/classic@1.0.51(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(cheerio@1.2.0)(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(undici@7.30.0)(ws@8.21.0)':
+  '@langchain/classic@1.0.52(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(cheerio@1.2.0)(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(undici@7.30.0)(ws@8.21.0)':
     dependencies:
       '@langchain/core': 1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
-      '@langchain/openai': 1.6.1(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(undici@7.30.0)(ws@8.21.0)
+      '@langchain/openai': 1.6.2(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(undici@7.30.0)(ws@8.21.0)
       '@langchain/textsplitters': 1.0.2(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))
       handlebars: 4.7.9
       js-yaml: 5.4.2
@@ -2258,6 +2264,19 @@ snapshots:
       - react-dom
 
   '@langchain/openai@1.6.1(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(undici@7.30.0)(ws@8.21.0)':
+    dependencies:
+      '@langchain/core': 1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
+      js-tiktoken: 1.0.21
+      openai: 7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5)
+      zod: 4.6.5
+    transitivePeerDependencies:
+      - '@aws-sdk/credential-provider-node'
+      - '@smithy/hash-node'
+      - '@smithy/signature-v4'
+      - undici
+      - ws
+
+  '@langchain/openai@1.6.2(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(undici@7.30.0)(ws@8.21.0)':
     dependencies:
       '@langchain/core': 1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
       js-tiktoken: 1.0.21
