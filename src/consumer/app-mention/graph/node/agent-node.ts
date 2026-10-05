@@ -3,12 +3,12 @@ import dedent from 'dedent';
 
 import type { Reply } from '../../type/reply';
 import type { GraphNode } from '../type/graph-node';
-import type { StructuredTool } from '@langchain/core/tools';
+import type { BindToolsInput } from '@langchain/core/language_models/chat_models';
 import type { ChatOpenAI } from '@langchain/openai';
 
 export type CreateAgentNodeParameters = {
   chatModel: ChatOpenAI;
-  tools: StructuredTool[];
+  tools: BindToolsInput[];
   replies: Reply[];
 };
 

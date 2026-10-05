@@ -181,15 +181,9 @@ importers:
       '@langchain/openai':
         specifier: 1.6.1
         version: 1.6.1(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(undici@7.30.0)(ws@8.21.0)
-      '@langchain/textsplitters':
-        specifier: 1.0.2
-        version: 1.0.2(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))
       '@tryfabric/mack':
         specifier: 1.2.1
         version: 1.2.1
-      cheerio:
-        specifier: 1.2.0
-        version: 1.2.0
       dedent:
         specifier: 1.7.2
         version: 1.7.2
@@ -2563,7 +2557,8 @@ snapshots:
 
   blake3-wasm@2.1.5: {}
 
-  boolbase@1.0.0: {}
+  boolbase@1.0.0:
+    optional: true
 
   brace-expansion@5.0.12:
     dependencies:
@@ -2599,6 +2594,7 @@ snapshots:
       domelementtype: 2.3.0
       domhandler: 5.0.3
       domutils: 3.2.2
+    optional: true
 
   cheerio@1.2.0:
     dependencies:
@@ -2613,6 +2609,7 @@ snapshots:
       parse5-parser-stream: 7.1.2
       undici: 7.30.0
       whatwg-mimetype: 4.0.0
+    optional: true
 
   ci-info@4.4.0: {}
 
@@ -2641,8 +2638,10 @@ snapshots:
       domhandler: 5.0.3
       domutils: 3.2.2
       nth-check: 2.1.1
+    optional: true
 
-  css-what@6.2.2: {}
+  css-what@6.2.2:
+    optional: true
 
   debug@4.4.3(supports-color@7.2.0):
     dependencies:
@@ -2661,18 +2660,22 @@ snapshots:
       domelementtype: 2.3.0
       domhandler: 5.0.3
       entities: 4.5.0
+    optional: true
 
-  domelementtype@2.3.0: {}
+  domelementtype@2.3.0:
+    optional: true
 
   domhandler@5.0.3:
     dependencies:
       domelementtype: 2.3.0
+    optional: true
 
   domutils@3.2.2:
     dependencies:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
+    optional: true
 
   electron-to-chromium@1.5.443: {}
 
@@ -2680,12 +2683,16 @@ snapshots:
     dependencies:
       iconv-lite: 0.6.3
       whatwg-encoding: 3.1.1
+    optional: true
 
-  entities@4.5.0: {}
+  entities@4.5.0:
+    optional: true
 
-  entities@6.0.1: {}
+  entities@6.0.1:
+    optional: true
 
-  entities@7.0.1: {}
+  entities@7.0.1:
+    optional: true
 
   error-stack-parser-es@1.0.5: {}
 
@@ -2910,10 +2917,12 @@ snapshots:
       domhandler: 5.0.3
       domutils: 3.2.2
       entities: 7.0.1
+    optional: true
 
   iconv-lite@0.6.3:
     dependencies:
       safer-buffer: 2.1.2
+    optional: true
 
   ignore@5.3.2: {}
 
@@ -3011,6 +3020,7 @@ snapshots:
   nth-check@2.1.1:
     dependencies:
       boolbase: 1.0.0
+    optional: true
 
   openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5):
     optionalDependencies:
@@ -3095,14 +3105,17 @@ snapshots:
     dependencies:
       domhandler: 5.0.3
       parse5: 7.3.0
+    optional: true
 
   parse5-parser-stream@7.1.2:
     dependencies:
       parse5: 7.3.0
+    optional: true
 
   parse5@7.3.0:
     dependencies:
       entities: 6.0.1
+    optional: true
 
   path-exists@4.0.0: {}
 
@@ -3134,7 +3147,8 @@ snapshots:
 
   resolve-pkg-maps@1.0.0: {}
 
-  safer-buffer@2.1.2: {}
+  safer-buffer@2.1.2:
+    optional: true
 
   semver@7.8.5: {}
 
@@ -3214,7 +3228,8 @@ snapshots:
 
   undici@7.29.0: {}
 
-  undici@7.30.0: {}
+  undici@7.30.0:
+    optional: true
 
   unenv@2.0.0-rc.24:
     dependencies:
@@ -3260,8 +3275,10 @@ snapshots:
   whatwg-encoding@3.1.1:
     dependencies:
       iconv-lite: 0.6.3
+    optional: true
 
-  whatwg-mimetype@4.0.0: {}
+  whatwg-mimetype@4.0.0:
+    optional: true
 
   which@2.0.2:
     dependencies:

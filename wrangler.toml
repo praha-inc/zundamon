@@ -15,4 +15,3 @@ max_retries = 3
 [[vectorize]]
 binding = "VECTORIZE_CONVERSATION"
 index_name = "zundamon-conversation"
-

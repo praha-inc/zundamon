@@ -1,5 +1,6 @@
 import { Annotation, END, START, StateGraph } from '@langchain/langgraph';
 import { toolsCondition } from '@langchain/langgraph/prebuilt';
+import { tools } from '@langchain/openai';
 
 import { createAgentNode } from './node/agent-node';
 import { createToolNode } from './node/tool-node';
@@ -7,13 +8,12 @@ import { createZundanizeNode } from './node/zundanize-node';
 import { createCalculatorTool } from '../tool/calculator-tool';
 import { createConversationSearchTool } from '../tool/conversation-search-tool';
 import { createThreadSummaryTool } from '../tool/thread-summary-tool';
-import { createWebSummaryTool } from '../tool/web-summary-tool';
 
 import type { GraphChannels } from './type/graph-channels';
 import type { Reply } from '../type/reply';
 import type { Embeddings } from '@langchain/core/embeddings';
 import type { BaseMessage } from '@langchain/core/messages';
-import type { StructuredTool } from '@langchain/core/tools';
+import type { ServerTool, StructuredTool } from '@langchain/core/tools';
 import type { VectorStore } from '@langchain/core/vectorstores';
 import type { ChatOpenAI } from '@langchain/openai';
 
@@ -38,15 +38,18 @@ export const createGraph = ({
   conversationVectorStore,
   replies,
 }: CreateGraphParameters): Graph => {
-  const tools: StructuredTool[] = [
+  const clientTools: StructuredTool[] = [
     createCalculatorTool(),
     createConversationSearchTool({ summaryModel, conversationVectorStore }),
     createThreadSummaryTool({ summaryModel, embeddingsModel, replies }),
-    createWebSummaryTool({ summaryModel, embeddingsModel }),
   ];
 
-  const agentNode = createAgentNode({ chatModel, tools, replies });
-  const toolNode = createToolNode({ tools });
+  const serverTools: ServerTool[] = [
+    tools.webSearch(),
+  ];
+
+  const agentNode = createAgentNode({ chatModel, tools: [...clientTools, ...serverTools], replies });
+  const toolNode = createToolNode({ tools: clientTools });
   const zundanizeNode = createZundanizeNode({ zundanizeModel });
 
   return new StateGraph(Annotation.Root({
