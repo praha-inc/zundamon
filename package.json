@@ -10,7 +10,7 @@
     "lint:type": "tsc --noEmit"
   },
   "dependencies": {
-    "@langchain/classic": "1.0.51",
+    "@langchain/classic": "1.0.52",
     "@langchain/cloudflare": "1.1.0",
     "@langchain/core": "1.2.14",
     "@langchain/langgraph": "1.4.18",
