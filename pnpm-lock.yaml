@@ -169,9 +169,6 @@ importers:
       '@langchain/classic':
         specifier: 1.0.52
         version: 1.0.52(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(cheerio@1.2.0)(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(undici@7.30.0)(ws@8.21.0)
-      '@langchain/cloudflare':
-        specifier: 1.1.0
-        version: 1.1.0(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))
       '@langchain/core':
         specifier: 1.2.14
         version: 1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
@@ -695,12 +692,6 @@ packages:
         optional: true
       typeorm:
         optional: true
-
-  '@langchain/cloudflare@1.1.0':
-    resolution: {integrity: sha512-fK4RFC4GNfapxO3d2l1qrB7p+kecvyMXjhyStOtnYtU7pN1syhy7H/fle3EHVpnZhq4+ElRe3nHjwVoQrbetPw==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      '@langchain/core': ^1.2.0
 
   '@langchain/core@1.2.14':
     resolution: {integrity: sha512-NP+FZMDO8kzVf79kiVHByveErVbTc1kUm0OvJuASxy5dt2xo/m7mi4O0npskU71A9h0vke3YUDYEciiAsXdCoA==}
@@ -2200,10 +2191,6 @@ snapshots:
       - openai
       - undici
       - ws
-
-  '@langchain/cloudflare@1.1.0(@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))':
-    dependencies:
-      '@langchain/core': 1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
 
   '@langchain/core@1.2.14(openai@7.25.0(undici@7.30.0)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)':
     dependencies:

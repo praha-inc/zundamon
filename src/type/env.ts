@@ -9,5 +9,4 @@ export type Env = SlackEdgeAppEnv & {
   OPENAI_EMBEDDINGS_MODEL_NAME: string;
   OPENAI_BASE_URL: string;
   QUEUE: Queue<QueueMessageBody>;
-  VECTORIZE_CONVERSATION: VectorizeIndex;
 };

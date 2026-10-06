@@ -5,7 +5,6 @@ import { tools } from '@langchain/openai';
 import { createAgentNode } from './node/agent-node';
 import { createToolNode } from './node/tool-node';
 import { createZundanizeNode } from './node/zundanize-node';
-import { createConversationSearchTool } from '../tool/conversation-search-tool';
 import { createThreadSummaryTool } from '../tool/thread-summary-tool';
 
 import type { GraphChannels } from './type/graph-channels';
@@ -13,7 +12,6 @@ import type { Reply } from '../type/reply';
 import type { Embeddings } from '@langchain/core/embeddings';
 import type { BaseMessage } from '@langchain/core/messages';
 import type { ServerTool, StructuredTool } from '@langchain/core/tools';
-import type { VectorStore } from '@langchain/core/vectorstores';
 import type { ChatOpenAI } from '@langchain/openai';
 
 export type CreateGraphParameters = {
@@ -21,7 +19,6 @@ export type CreateGraphParameters = {
   summaryModel: ChatOpenAI;
   zundanizeModel: ChatOpenAI;
   embeddingsModel: Embeddings;
-  conversationVectorStore: VectorStore;
   replies: Reply[];
 };
 
@@ -34,11 +31,9 @@ export const createGraph = ({
   summaryModel,
   zundanizeModel,
   embeddingsModel,
-  conversationVectorStore,
   replies,
 }: CreateGraphParameters): Graph => {
   const clientTools: StructuredTool[] = [
-    createConversationSearchTool({ summaryModel, conversationVectorStore }),
     createThreadSummaryTool({ summaryModel, embeddingsModel, replies }),
   ];
 

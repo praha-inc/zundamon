@@ -1,17 +1,14 @@
 import { Buffer } from 'node:buffer';
 
-import { Document } from '@langchain/core/documents';
 import { markdownToBlocks } from '@tryfabric/mack';
 
 import { createGraph } from './graph';
 import { createChatModel } from './helper/create-chat-model';
-import { createConversationVectorStore } from './helper/create-conversation-vector-store';
 import { createEmbeddingsModel } from './helper/create-embeddings-model';
 import { createSlackClient } from './helper/create-slack-client';
 import { createSummaryModel } from './helper/create-summary-model';
 import { createZundanizeModel } from './helper/create-zundanize-model';
 import { getReplies } from './helper/get-replies';
-import { repliesToText } from './helper/replies-to-history';
 
 import type { AppMentionEvent } from './event';
 import type { Env } from '../../type/env';
@@ -29,14 +26,12 @@ export const appMentionEventHandler = async (
     const summaryModel = createSummaryModel(env);
     const zundanizeModel = createZundanizeModel(env);
     const embeddingsModel = createEmbeddingsModel(env);
-    const conversationVectorStore = createConversationVectorStore(env, embeddingsModel);
 
     const graph = createGraph({
       chatModel,
       summaryModel,
       zundanizeModel,
       embeddingsModel,
-      conversationVectorStore,
       replies,
     });
 
@@ -67,18 +62,6 @@ export const appMentionEventHandler = async (
     });
 
     message.ack();
-
-    await conversationVectorStore.addDocuments([
-      new Document({
-        pageContent: repliesToText([
-          ...replies.slice(-5),
-          { type: 'Human', userId: message.body.payload.user, content: message.body.payload.text },
-          { type: 'AI', userId: message.body.context.bot, content: text },
-        ]),
-      }),
-    ]).catch((error: unknown) => {
-      console.error('Failed to store conversation.', error);
-    });
   } catch (error) {
     await slackClient.chat.update({
       channel: message.body.context.channel,
