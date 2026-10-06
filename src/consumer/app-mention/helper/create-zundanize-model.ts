@@ -5,6 +5,7 @@ import type { Env } from '../../../type/env';
 export const createZundanizeModel = (env: Env) => {
   return new ChatOpenAI({
     verbose: true,
+    zdrEnabled: true,
     useResponsesApi: true,
     model: env.OPENAI_ZUNDANIZE_MODEL_NAME,
     apiKey: env.OPENAI_API_KEY,
