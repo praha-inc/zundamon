@@ -3,7 +3,6 @@ import { Buffer } from 'node:buffer';
 import { markdownToBlocks } from '@tryfabric/mack';
 
 import { createGraph } from './graph';
-import { createModel } from './helper/create-model';
 import { createSlackClient } from './helper/create-slack-client';
 import { getReplies } from './helper/get-replies';
 
@@ -19,12 +18,8 @@ export const appMentionEventHandler = async (
   const replies = await getReplies(slackClient, message.body);
 
   try {
-    const mediumModel = createModel(env, env.OPENAI_MEDIUM_MODEL_NAME);
-    const smallModel = createModel(env, env.OPENAI_SMALL_MODEL_NAME);
-
     const graph = createGraph({
-      mediumModel,
-      smallModel,
+      env,
       slackClient,
       channel: message.body.context.channel,
       threadTs: message.body.context.threadTs,

@@ -5,18 +5,18 @@ import { tools } from '@langchain/openai';
 import { createAgentNode } from './node/agent-node';
 import { createToolNode } from './node/tool-node';
 import { createZundanizeNode } from './node/zundanize-node';
+import { createModel } from '../helper/create-model';
 import { createSlackSearchTool } from '../tool/slack-search-tool';
 
 import type { GraphChannels } from './type/graph-channels';
+import type { Env } from '../../../type/env';
 import type { Reply } from '../type/reply';
 import type { BaseMessage } from '@langchain/core/messages';
 import type { ServerTool, StructuredTool } from '@langchain/core/tools';
-import type { ChatOpenAI } from '@langchain/openai';
 import type { SlackAPIClient } from 'slack-edge';
 
 export type CreateGraphParameters = {
-  mediumModel: ChatOpenAI;
-  smallModel: ChatOpenAI;
+  env: Env;
   slackClient: SlackAPIClient;
   channel: string;
   threadTs: string;
@@ -29,14 +29,16 @@ export type Graph = {
 };
 
 export const createGraph = ({
-  mediumModel,
-  smallModel,
+  env,
   slackClient,
   channel,
   threadTs,
   actionToken,
   replies,
 }: CreateGraphParameters): Graph => {
+  const mediumModel = createModel(env, env.OPENAI_MEDIUM_MODEL_NAME);
+  const smallModel = createModel(env, env.OPENAI_SMALL_MODEL_NAME);
+
   const clientTools: StructuredTool[] = [
     createSlackSearchTool({ model: smallModel, slackClient, actionToken, channel, threadTs }),
   ];
