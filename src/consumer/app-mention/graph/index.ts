@@ -6,11 +6,12 @@ import { createAgentNode } from './node/agent-node';
 import { createToolNode } from './node/tool-node';
 import { createZundanizeNode } from './node/zundanize-node';
 import { createModel } from '../helper/create-model';
+import { getReplies } from '../helper/get-replies';
 import { createSlackSearchTool } from '../tool/slack-search-tool';
 
 import type { GraphChannels } from './type/graph-channels';
 import type { Env } from '../../../type/env';
-import type { Reply } from '../type/reply';
+import type { AppMentionEvent } from '../event';
 import type { BaseMessage } from '@langchain/core/messages';
 import type { ServerTool, StructuredTool } from '@langchain/core/tools';
 import type { SlackAPIClient } from 'slack-edge';
@@ -18,29 +19,30 @@ import type { SlackAPIClient } from 'slack-edge';
 export type CreateGraphParameters = {
   env: Env;
   slackClient: SlackAPIClient;
-  channel: string;
-  threadTs: string;
-  actionToken: string;
-  replies: Reply[];
+  event: AppMentionEvent;
 };
 
 export type Graph = {
   invoke: (input: Partial<GraphChannels>) => Promise<GraphChannels>;
 };
 
-export const createGraph = ({
+export const createGraph = async ({
   env,
   slackClient,
-  channel,
-  threadTs,
-  actionToken,
-  replies,
-}: CreateGraphParameters): Graph => {
+  event,
+}: CreateGraphParameters): Promise<Graph> => {
   const mediumModel = createModel(env, env.OPENAI_MEDIUM_MODEL_NAME);
   const smallModel = createModel(env, env.OPENAI_SMALL_MODEL_NAME);
+  const replies = await getReplies(slackClient, event);
 
   const clientTools: StructuredTool[] = [
-    createSlackSearchTool({ model: smallModel, slackClient, actionToken, channel, threadTs }),
+    createSlackSearchTool({
+      model: smallModel,
+      slackClient,
+      actionToken: event.context.actionToken,
+      channel: event.context.channel,
+      threadTs: event.context.threadTs,
+    }),
   ];
 
   const serverTools: ServerTool[] = [

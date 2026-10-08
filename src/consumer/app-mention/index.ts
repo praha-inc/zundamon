@@ -4,7 +4,6 @@ import { markdownToBlocks } from '@tryfabric/mack';
 
 import { createGraph } from './graph';
 import { createSlackClient } from './helper/create-slack-client';
-import { getReplies } from './helper/get-replies';
 
 import type { AppMentionEvent } from './event';
 import type { Env } from '../../type/env';
@@ -15,16 +14,12 @@ export const appMentionEventHandler = async (
   message: Message<AppMentionEvent>,
 ) => {
   const slackClient = createSlackClient(env);
-  const replies = await getReplies(slackClient, message.body);
 
   try {
-    const graph = createGraph({
+    const graph = await createGraph({
       env,
       slackClient,
-      channel: message.body.context.channel,
-      threadTs: message.body.context.threadTs,
-      actionToken: message.body.context.actionToken,
-      replies,
+      event: message.body,
     });
 
     const result = await graph.invoke({
