@@ -6,11 +6,9 @@ import { createAgentNode } from './node/agent-node';
 import { createToolNode } from './node/tool-node';
 import { createZundanizeNode } from './node/zundanize-node';
 import { createSlackSearchTool } from '../tool/slack-search-tool';
-import { createThreadSummaryTool } from '../tool/thread-summary-tool';
 
 import type { GraphChannels } from './type/graph-channels';
 import type { Reply } from '../type/reply';
-import type { Embeddings } from '@langchain/core/embeddings';
 import type { BaseMessage } from '@langchain/core/messages';
 import type { ServerTool, StructuredTool } from '@langchain/core/tools';
 import type { ChatOpenAI } from '@langchain/openai';
@@ -20,7 +18,6 @@ export type CreateGraphParameters = {
   chatModel: ChatOpenAI;
   summaryModel: ChatOpenAI;
   zundanizeModel: ChatOpenAI;
-  embeddingsModel: Embeddings;
   slackClient: SlackAPIClient;
   channel: string;
   threadTs: string;
@@ -36,7 +33,6 @@ export const createGraph = ({
   chatModel,
   summaryModel,
   zundanizeModel,
-  embeddingsModel,
   slackClient,
   channel,
   threadTs,
@@ -45,7 +41,6 @@ export const createGraph = ({
 }: CreateGraphParameters): Graph => {
   const clientTools: StructuredTool[] = [
     createSlackSearchTool({ summaryModel, slackClient, actionToken, channel, threadTs }),
-    createThreadSummaryTool({ summaryModel, embeddingsModel, replies }),
   ];
 
   const serverTools: ServerTool[] = [

@@ -4,7 +4,6 @@ import { markdownToBlocks } from '@tryfabric/mack';
 
 import { createGraph } from './graph';
 import { createChatModel } from './helper/create-chat-model';
-import { createEmbeddingsModel } from './helper/create-embeddings-model';
 import { createSlackClient } from './helper/create-slack-client';
 import { createSummaryModel } from './helper/create-summary-model';
 import { createZundanizeModel } from './helper/create-zundanize-model';
@@ -25,13 +24,11 @@ export const appMentionEventHandler = async (
     const chatModel = createChatModel(env);
     const summaryModel = createSummaryModel(env);
     const zundanizeModel = createZundanizeModel(env);
-    const embeddingsModel = createEmbeddingsModel(env);
 
     const graph = createGraph({
       chatModel,
       summaryModel,
       zundanizeModel,
-      embeddingsModel,
       slackClient,
       channel: message.body.context.channel,
       threadTs: message.body.context.threadTs,

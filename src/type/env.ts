@@ -6,7 +6,6 @@ export type Env = SlackEdgeAppEnv & {
   OPENAI_CHAT_MODEL_NAME: string;
   OPENAI_SUMMARY_MODEL_NAME: string;
   OPENAI_ZUNDANIZE_MODEL_NAME: string;
-  OPENAI_EMBEDDINGS_MODEL_NAME: string;
   OPENAI_BASE_URL: string;
   QUEUE: Queue<QueueMessageBody>;
 };
