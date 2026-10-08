@@ -7,24 +7,24 @@ import type { BindToolsInput } from '@langchain/core/language_models/chat_models
 import type { ChatOpenAI } from '@langchain/openai';
 
 export type CreateAgentNodeParameters = {
-  chatModel: ChatOpenAI;
+  model: ChatOpenAI;
   tools: BindToolsInput[];
   replies: Reply[];
 };
 
 export const createAgentNode = ({
-  chatModel,
+  model,
   tools,
   replies,
 }: CreateAgentNodeParameters): GraphNode => {
-  const model = chatModel.bindTools(tools, {
+  const modelWithTools = model.bindTools(tools, {
     include: ['code_interpreter_call.outputs'],
   });
 
   return {
     name: 'agent',
     action: async ({ context, messages }, config) => {
-      const response = await model.invoke([
+      const response = await modelWithTools.invoke([
         new SystemMessage(dedent`
           Constraints:
             - Please respond in Japanese.

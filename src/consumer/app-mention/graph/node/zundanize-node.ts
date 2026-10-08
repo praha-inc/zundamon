@@ -5,11 +5,11 @@ import type { GraphNode } from '../type/graph-node';
 import type { ChatOpenAI } from '@langchain/openai';
 
 export type CreateZundanizeNodeParameters = {
-  zundanizeModel: ChatOpenAI;
+  model: ChatOpenAI;
 };
 
 export const createZundanizeNode = ({
-  zundanizeModel,
+  model,
 }: CreateZundanizeNodeParameters): GraphNode => {
   return {
     name: 'zundanize',
@@ -19,7 +19,7 @@ export const createZundanizeNode = ({
         throw new Error('No message found');
       }
 
-      const response = await zundanizeModel.invoke([
+      const response = await model.invoke([
         new SystemMessage(dedent`
           You will play the role of "Zundamon" a fairy of Zundamochi.
           Please strictly adhere to the following restrictions and convert the input sentences into what Zundamon speaks.

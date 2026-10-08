@@ -105,7 +105,7 @@ const formatResult = (
 };
 
 export interface SlackSearchToolParameters extends ToolParams {
-  summaryModel: BaseChatModel;
+  model: BaseChatModel;
   slackClient: SlackAPIClient;
   actionToken: string;
   channel: string;
@@ -113,7 +113,7 @@ export interface SlackSearchToolParameters extends ToolParams {
 }
 
 export const createSlackSearchTool = ({
-  summaryModel,
+  model,
   slackClient,
   actionToken,
   channel,
@@ -144,8 +144,8 @@ export const createSlackSearchTool = ({
         return 'The search limit for this question has been reached. Answer with the information already found.';
       }
 
-      const planChain = createSlackSearchPlanChain(summaryModel);
-      const selectChain = createSlackSearchSelectChain(summaryModel);
+      const planChain = createSlackSearchPlanChain(model);
+      const selectChain = createSlackSearchSelectChain(model);
 
       const plan = await planChain.invoke({
         today: new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Tokyo' }).format(new Date()),

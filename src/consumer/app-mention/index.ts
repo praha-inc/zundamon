@@ -3,10 +3,8 @@ import { Buffer } from 'node:buffer';
 import { markdownToBlocks } from '@tryfabric/mack';
 
 import { createGraph } from './graph';
-import { createChatModel } from './helper/create-chat-model';
+import { createModel } from './helper/create-model';
 import { createSlackClient } from './helper/create-slack-client';
-import { createSummaryModel } from './helper/create-summary-model';
-import { createZundanizeModel } from './helper/create-zundanize-model';
 import { getReplies } from './helper/get-replies';
 
 import type { AppMentionEvent } from './event';
@@ -21,14 +19,12 @@ export const appMentionEventHandler = async (
   const replies = await getReplies(slackClient, message.body);
 
   try {
-    const chatModel = createChatModel(env);
-    const summaryModel = createSummaryModel(env);
-    const zundanizeModel = createZundanizeModel(env);
+    const mediumModel = createModel(env, env.OPENAI_MEDIUM_MODEL_NAME);
+    const smallModel = createModel(env, env.OPENAI_SMALL_MODEL_NAME);
 
     const graph = createGraph({
-      chatModel,
-      summaryModel,
-      zundanizeModel,
+      mediumModel,
+      smallModel,
       slackClient,
       channel: message.body.context.channel,
       threadTs: message.body.context.threadTs,

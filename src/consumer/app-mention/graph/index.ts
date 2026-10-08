@@ -15,9 +15,8 @@ import type { ChatOpenAI } from '@langchain/openai';
 import type { SlackAPIClient } from 'slack-edge';
 
 export type CreateGraphParameters = {
-  chatModel: ChatOpenAI;
-  summaryModel: ChatOpenAI;
-  zundanizeModel: ChatOpenAI;
+  mediumModel: ChatOpenAI;
+  smallModel: ChatOpenAI;
   slackClient: SlackAPIClient;
   channel: string;
   threadTs: string;
@@ -30,9 +29,8 @@ export type Graph = {
 };
 
 export const createGraph = ({
-  chatModel,
-  summaryModel,
-  zundanizeModel,
+  mediumModel,
+  smallModel,
   slackClient,
   channel,
   threadTs,
@@ -40,7 +38,7 @@ export const createGraph = ({
   replies,
 }: CreateGraphParameters): Graph => {
   const clientTools: StructuredTool[] = [
-    createSlackSearchTool({ summaryModel, slackClient, actionToken, channel, threadTs }),
+    createSlackSearchTool({ model: smallModel, slackClient, actionToken, channel, threadTs }),
   ];
 
   const serverTools: ServerTool[] = [
@@ -48,9 +46,9 @@ export const createGraph = ({
     tools.codeInterpreter(),
   ];
 
-  const agentNode = createAgentNode({ chatModel, tools: [...clientTools, ...serverTools], replies });
+  const agentNode = createAgentNode({ model: mediumModel, tools: [...clientTools, ...serverTools], replies });
   const toolNode = createToolNode({ tools: clientTools });
-  const zundanizeNode = createZundanizeNode({ zundanizeModel });
+  const zundanizeNode = createZundanizeNode({ model: smallModel });
 
   return new StateGraph(Annotation.Root({
     context: Annotation<GraphChannels['context']>,
