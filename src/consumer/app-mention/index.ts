@@ -32,6 +32,10 @@ export const appMentionEventHandler = async (
       summaryModel,
       zundanizeModel,
       embeddingsModel,
+      slackClient,
+      channel: message.body.context.channel,
+      threadTs: message.body.context.threadTs,
+      actionToken: message.body.context.actionToken,
       replies,
     });
 

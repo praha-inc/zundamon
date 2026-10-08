@@ -8,6 +8,7 @@ export const AppMentionEventSchema = z.object({
     replyTs: z.string(),
     bot: z.string(),
     token: z.string(),
+    actionToken: z.string(),
   }),
   payload: z.object({
     ts: z.string(),

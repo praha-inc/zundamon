@@ -1,3 +1,4 @@
+import { getActionToken } from './helper/get-action-token';
 import { AppMentionEventSchema } from '../../consumer/app-mention/event';
 
 import type { Env } from '../../type/env';
@@ -10,6 +11,7 @@ export const appMentionHandler: EventLazyHandler<'app_mention', Env> = async ({
 }) => {
   if (payload.edited) return;
 
+  const actionToken = getActionToken(payload);
   const response = await context.say({
     text: '考え中なのだ。',
     thread_ts: payload.thread_ts || payload.ts,
@@ -30,6 +32,7 @@ export const appMentionHandler: EventLazyHandler<'app_mention', Env> = async ({
       replyTs: response.message?.ts,
       bot: context.botUserId,
       token: context.botToken,
+      actionToken: actionToken,
     },
     payload: {
       ts: payload.ts,
