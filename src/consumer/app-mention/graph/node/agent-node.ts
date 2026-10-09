@@ -1,7 +1,7 @@
 import { AIMessage, HumanMessage, SystemMessage, trimMessages } from '@langchain/core/messages';
 import dedent from 'dedent';
 
-import type { Reply } from '../../type/reply';
+import type { ThreadMessage } from '../../helper/get-thread-messages';
 import type { GraphNode } from '../type/graph-node';
 import type { BindToolsInput } from '@langchain/core/language_models/chat_models';
 import type { BaseMessage } from '@langchain/core/messages';
@@ -20,7 +20,7 @@ const countTokens = (messages: BaseMessage[]): number => {
 export type CreateAgentNodeParameters = {
   model: ChatOpenAI;
   tools: BindToolsInput[];
-  replies: Reply[];
+  replies: ThreadMessage[];
 };
 
 export const createAgentNode = ({
@@ -44,11 +44,11 @@ export const createAgentNode = ({
             - Each user message begins with the sender's UserId in the form "[UserId: Uxxxxxxxx]".
         `),
         ...await trimMessages(replies.map((reply) => {
-          if (reply.type === 'AI') {
-            return new AIMessage(reply.content);
+          if (reply.userId === context.botUserId) {
+            return new AIMessage(reply.text);
           }
 
-          return new HumanMessage(`[UserId: ${reply.userId}]\n${reply.content}`);
+          return new HumanMessage(`[UserId: ${reply.userId}]\n${reply.text}`);
         }), {
           maxTokens: MAX_HISTORY_TOKENS,
           tokenCounter: countTokens,

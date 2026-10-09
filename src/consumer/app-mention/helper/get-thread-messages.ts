@@ -3,20 +3,34 @@ import type { SlackAPIClient } from 'slack-edge';
 export type ThreadMessage = {
   userId: string;
   text: string;
+  ts: string;
+};
+
+export type GetThreadMessagesParameters = {
+  channel: string;
+  threadTs: string;
+  latest?: string;
+  limit?: number;
 };
 
 export const getThreadMessages = async (
   client: SlackAPIClient,
-  channel: string,
-  threadTs: string,
+  {
+    channel,
+    threadTs,
+    latest,
+    limit,
+  }: GetThreadMessagesParameters,
 ): Promise<ThreadMessage[]> => {
   const replies = await client.conversations.replies({
     channel: channel,
     ts: threadTs,
-    limit: 50,
+    ...latest ? { latest } : {},
+    ...limit ? { limit } : {},
   });
 
   return (replies.messages ?? []).map((message) => ({
+    ts: message.ts ?? '',
     userId: message.user ?? '',
     text: message.text ?? '',
   }));

@@ -230,7 +230,11 @@ export const createSlackSearchTool = ({
 
       const threads = await Promise.all(results.slice(0, MAX_EXPANDED_THREADS).map(async (result) => {
         try {
-          return await getThreadMessages(slackClient, result.channelId, result.threadTs ?? result.messageTs);
+          return await getThreadMessages(slackClient, {
+            channel: result.channelId,
+            threadTs: result.threadTs ?? result.messageTs,
+            limit: 50,
+          });
         } catch {
           // ボットが参加していないチャンネルなどでスレッドを取得できない場合は前後のメッセージだけを使う
           return undefined;

@@ -6,7 +6,7 @@ import { createAgentNode } from './node/agent-node';
 import { createToolNode } from './node/tool-node';
 import { createZundanizeNode } from './node/zundanize-node';
 import { createModel } from '../helper/create-model';
-import { getReplies } from '../helper/get-replies';
+import { getThreadMessages } from '../helper/get-thread-messages';
 import { createSlackSearchTool } from '../tool/slack-search-tool';
 
 import type { GraphChannels } from './type/graph-channels';
@@ -33,7 +33,15 @@ export const createGraph = async ({
 }: CreateGraphParameters): Promise<Graph> => {
   const mediumModel = createModel(env, env.OPENAI_MEDIUM_MODEL_NAME);
   const smallModel = createModel(env, env.OPENAI_SMALL_MODEL_NAME);
-  const replies = await getReplies(slackClient, event);
+
+  const replies = await getThreadMessages(slackClient, {
+    channel: event.context.channel,
+    threadTs: event.context.threadTs,
+    latest: event.context.replyTs,
+  }).then((messages) => {
+    // 今回のメンションは画像と合わせて別のメッセージとして渡すため、会話履歴からは除外する
+    return messages.filter((message) => message.ts !== event.payload.ts);
+  });
 
   const clientTools: StructuredTool[] = [
     createSlackSearchTool({
