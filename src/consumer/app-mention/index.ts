@@ -5,11 +5,20 @@ import { createMessages } from './helper/create-messages';
 import { createReply } from './helper/create-reply';
 import { createSlackClient } from './helper/create-slack-client';
 import { getThreadMessages } from './helper/get-thread-messages';
+import { isRetryableError } from './helper/is-retryable-error';
 
 import type { AppMentionEvent } from './event';
 import type { Env } from '../../type/env';
 
+// wrangler.tomlのmax_retriesと合わせる
+const MAX_RETRIES = 3;
+
+// 再試行の間隔は10秒、20秒、40秒と倍にしていく
+const RETRY_BASE_DELAY_SECONDS = 10;
+
 const THINKING_STATUS = '考え中なのだ…';
+
+const RETRYING_STATUS = 'うまくいかなかったので、少し待ってからやり直すのだ…';
 
 const TOOL_STATUSES: Record<string, string> = {
   slack_search: 'Slackを検索中なのだ…',
@@ -91,9 +100,15 @@ export const appMentionEventHandler = async (
 
     message.ack();
   } catch (error) {
-    await reply.fail('エラーが発生したっぽいのだ。。。');
+    console.error('Failed to answer the mention.', error);
 
-    message.retry();
-    throw error;
+    if (isRetryableError(error) && message.attempts <= MAX_RETRIES) {
+      await reply.fail(RETRYING_STATUS);
+      message.retry({ delaySeconds: RETRY_BASE_DELAY_SECONDS * 2 ** (message.attempts - 1) });
+      return;
+    }
+
+    await reply.fail('エラーが発生したっぽいのだ。。。');
+    message.ack();
   }
 };

@@ -10,4 +10,5 @@ binding = "QUEUE"
 [[queues.consumers]]
 queue = "zundamon"
 max_batch_size = 1
+# src/consumer/app-mention/index.tsのMAX_RETRIESと合わせる
 max_retries = 3
