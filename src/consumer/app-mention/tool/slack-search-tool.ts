@@ -126,7 +126,7 @@ export const createSlackSearchTool = ({
 
   return new DynamicStructuredTool({
     ...parameters,
-    name: 'slack-search',
+    name: 'slack_search',
     description: dedent`
       Useful for finding past conversations in public Slack channels, such as past discussions, decisions, internal terms, or unfamiliar words.
       The tool generates keyword queries by itself, so describe what you want to find in natural language.

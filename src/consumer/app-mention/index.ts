@@ -10,8 +10,8 @@ import type { Env } from '../../type/env';
 const THINKING_STATUS = '考え中なのだ…';
 
 const TOOL_STATUSES: Record<string, string> = {
-  'slack-search': 'Slackを検索中なのだ…',
-  'web_search': 'Webを検索中なのだ…',
+  slack_search: 'Slackを検索中なのだ…',
+  web_search: 'Webを検索中なのだ…',
 };
 
 export const appMentionEventHandler = async (
