@@ -1,22 +1,53 @@
 import { Buffer } from 'node:buffer';
 
 import { createGraph } from './graph';
+import { createReply } from './helper/create-reply';
 import { createSlackClient } from './helper/create-slack-client';
 
 import type { AppMentionEvent } from './event';
 import type { Env } from '../../type/env';
+
+const THINKING_STATUS = '考え中なのだ…';
+
+const TOOL_STATUSES: Record<string, string> = {
+  'slack-search': 'Slackを検索中なのだ…',
+  'web_search': 'Webを検索中なのだ…',
+};
 
 export const appMentionEventHandler = async (
   env: Env,
   message: Message<AppMentionEvent>,
 ) => {
   const slackClient = createSlackClient(env);
+  const reply = createReply(slackClient, {
+    channel: message.body.context.channel,
+    threadTs: message.body.context.threadTs,
+    placeholderTs: message.body.context.replyTs,
+    recipientUserId: message.body.payload.user,
+    recipientTeamId: message.body.payload.team,
+  });
 
   try {
     const graph = await createGraph({
       env,
       slackClient,
       event: message.body,
+      onProgress: async (progress) => {
+        switch (progress.type) {
+          case 'thinking': {
+            await reply.update(THINKING_STATUS);
+            break;
+          }
+          case 'tool-call': {
+            await reply.update(TOOL_STATUSES[progress.name] ?? THINKING_STATUS);
+            break;
+          }
+          case 'answer': {
+            await reply.append(progress.delta);
+            break;
+          }
+        }
+      },
     });
 
     const result = await graph.invoke({
@@ -37,21 +68,11 @@ export const appMentionEventHandler = async (
       },
     });
 
-    const text = result.messages.at(-1)?.text ?? '';
-    await slackClient.chat.update({
-      channel: message.body.context.channel,
-      ts: message.body.context.replyTs,
-      text: text,
-      blocks: [{ type: 'markdown', text }],
-    });
+    await reply.complete(result.messages.at(-1)?.text ?? '');
 
     message.ack();
   } catch (error) {
-    await slackClient.chat.update({
-      channel: message.body.context.channel,
-      ts: message.body.context.replyTs,
-      text: 'エラーが発生したっぽいのだ。。。',
-    });
+    await reply.fail('エラーが発生したっぽいのだ。。。');
 
     message.retry();
     throw error;

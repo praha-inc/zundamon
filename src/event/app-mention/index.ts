@@ -13,7 +13,7 @@ export const appMentionHandler: EventLazyHandler<'app_mention', Env> = async ({
 
   const actionToken = getActionToken(payload);
   const response = await context.say({
-    text: '考え中なのだ。',
+    text: '考え中なのだ…',
     thread_ts: payload.thread_ts || payload.ts,
   });
 
@@ -37,6 +37,7 @@ export const appMentionHandler: EventLazyHandler<'app_mention', Env> = async ({
     payload: {
       ts: payload.ts,
       user: payload.user,
+      team: payload.user_team ?? context.teamId,
       text: payload.text,
       images: images,
     },

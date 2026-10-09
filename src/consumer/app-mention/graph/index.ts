@@ -10,6 +10,7 @@ import { getThreadMessages } from '../helper/get-thread-messages';
 import { createSlackSearchTool } from '../tool/slack-search-tool';
 
 import type { GraphChannels } from './type/graph-channels';
+import type { GraphProgressListener } from './type/graph-progress';
 import type { Env } from '../../../type/env';
 import type { AppMentionEvent } from '../event';
 import type { BaseMessage } from '@langchain/core/messages';
@@ -20,6 +21,7 @@ export type CreateGraphParameters = {
   env: Env;
   slackClient: SlackAPIClient;
   event: AppMentionEvent;
+  onProgress: GraphProgressListener;
 };
 
 export type Graph = {
@@ -30,6 +32,7 @@ export const createGraph = async ({
   env,
   slackClient,
   event,
+  onProgress,
 }: CreateGraphParameters): Promise<Graph> => {
   const mediumModel = createModel(env, env.OPENAI_MEDIUM_MODEL_NAME);
   const smallModel = createModel(env, env.OPENAI_SMALL_MODEL_NAME);
@@ -58,9 +61,9 @@ export const createGraph = async ({
     tools.codeInterpreter(),
   ];
 
-  const agentNode = createAgentNode({ model: mediumModel, tools: [...clientTools, ...serverTools], replies });
+  const agentNode = createAgentNode({ model: mediumModel, tools: [...clientTools, ...serverTools], replies, onProgress });
   const toolNode = createToolNode({ tools: clientTools });
-  const zundanizeNode = createZundanizeNode({ model: smallModel });
+  const zundanizeNode = createZundanizeNode({ model: smallModel, onProgress });
 
   return new StateGraph(Annotation.Root({
     context: Annotation<GraphChannels['context']>,

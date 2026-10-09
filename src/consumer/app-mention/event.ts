@@ -13,6 +13,7 @@ export const AppMentionEventSchema = z.object({
   payload: z.object({
     ts: z.string(),
     user: z.string(),
+    team: z.string(),
     text: z.string(),
     images: z.array(z.object({
       mimetype: z.string(),

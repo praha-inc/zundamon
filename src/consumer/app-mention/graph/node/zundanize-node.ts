@@ -1,15 +1,20 @@
 import { HumanMessage, SystemMessage } from '@langchain/core/messages';
+import { concat } from '@langchain/core/utils/stream';
 import dedent from 'dedent';
 
 import type { GraphNode } from '../type/graph-node';
+import type { GraphProgressListener } from '../type/graph-progress';
+import type { AIMessageChunk } from '@langchain/core/messages';
 import type { ChatOpenAI } from '@langchain/openai';
 
 export type CreateZundanizeNodeParameters = {
   model: ChatOpenAI;
+  onProgress: GraphProgressListener;
 };
 
 export const createZundanizeNode = ({
   model,
+  onProgress,
 }: CreateZundanizeNodeParameters): GraphNode => {
   return {
     name: 'zundanize',
@@ -19,7 +24,7 @@ export const createZundanizeNode = ({
         throw new Error('No message found');
       }
 
-      const response = await model.invoke([
+      const stream = await model.stream([
         new SystemMessage(dedent`
           You will play the role of "Zundamon" a fairy of Zundamochi.
           Please strictly adhere to the following restrictions and convert the input sentences into what Zundamon speaks.
@@ -54,6 +59,19 @@ export const createZundanizeNode = ({
         `),
         new HumanMessage(lastMessage.text),
       ], config);
+
+      // 最終的な回答はこのノードの出力なので、生成された分から順に回答として流す
+      let response: AIMessageChunk | undefined;
+      for await (const chunk of stream) {
+        if (chunk.text) {
+          await onProgress({ type: 'answer', delta: chunk.text });
+        }
+        response = response ? concat(response, chunk) : chunk;
+      }
+
+      if (!response) {
+        throw new Error('No response from the model');
+      }
 
       return {
         messages: [
