@@ -1,50 +1,41 @@
-import { Annotation, END, START, StateGraph } from '@langchain/langgraph';
+import { END, MessagesAnnotation, START, StateGraph } from '@langchain/langgraph';
 import { toolsCondition } from '@langchain/langgraph/prebuilt';
 import { tools } from '@langchain/openai';
 
+import { GraphContextSchema } from './graph-context';
 import { createAgentNode } from './node/agent-node';
 import { createToolNode } from './node/tool-node';
 import { createZundanizeNode } from './node/zundanize-node';
 import { createModel } from '../helper/create-model';
-import { getThreadMessages } from '../helper/get-thread-messages';
 import { createSlackSearchTool } from '../tool/slack-search-tool';
 
-import type { GraphChannels } from './type/graph-channels';
+import type { GraphContext } from './graph-context';
+import type { GraphInput } from './type/graph-input';
 import type { GraphProgressListener } from './type/graph-progress';
 import type { Env } from '../../../type/env';
 import type { AppMentionEvent } from '../event';
-import type { BaseMessage } from '@langchain/core/messages';
 import type { ServerTool, StructuredTool } from '@langchain/core/tools';
 import type { SlackAPIClient } from 'slack-edge';
 
 export type CreateGraphParameters = {
   env: Env;
-  slackClient: SlackAPIClient;
   event: AppMentionEvent;
+  slackClient: SlackAPIClient;
   onProgress: GraphProgressListener;
 };
 
 export type Graph = {
-  invoke: (input: Partial<GraphChannels>) => Promise<GraphChannels>;
+  invoke: (input: GraphInput, options: { context: GraphContext }) => Promise<GraphInput>;
 };
 
-export const createGraph = async ({
+export const createGraph = ({
   env,
-  slackClient,
   event,
+  slackClient,
   onProgress,
-}: CreateGraphParameters): Promise<Graph> => {
+}: CreateGraphParameters): Graph => {
   const mediumModel = createModel(env, env.OPENAI_MEDIUM_MODEL_NAME);
   const smallModel = createModel(env, env.OPENAI_SMALL_MODEL_NAME);
-
-  const replies = await getThreadMessages(slackClient, {
-    channel: event.context.channel,
-    threadTs: event.context.threadTs,
-    latest: event.context.replyTs,
-  }).then((messages) => {
-    // 今回のメンションは画像と合わせて別のメッセージとして渡すため、会話履歴からは除外する
-    return messages.filter((message) => message.ts !== event.payload.ts);
-  });
 
   const clientTools: StructuredTool[] = [
     createSlackSearchTool({
@@ -61,17 +52,11 @@ export const createGraph = async ({
     tools.codeInterpreter(),
   ];
 
-  const agentNode = createAgentNode({ model: mediumModel, tools: [...clientTools, ...serverTools], replies, onProgress });
+  const agentNode = createAgentNode({ model: mediumModel, tools: [...clientTools, ...serverTools], onProgress });
   const toolNode = createToolNode({ tools: clientTools });
   const zundanizeNode = createZundanizeNode({ model: smallModel, onProgress });
 
-  return new StateGraph(Annotation.Root({
-    context: Annotation<GraphChannels['context']>,
-    messages: Annotation<BaseMessage[]>({
-      reducer: (x, y) => [...x, ...y],
-      default: () => [],
-    }),
-  }))
+  return new StateGraph(MessagesAnnotation, GraphContextSchema)
     .addNode(agentNode.name, agentNode.action)
     .addNode(toolNode.name, toolNode.action)
     .addNode(zundanizeNode.name, zundanizeNode.action)

@@ -1,8 +1,10 @@
 import { Buffer } from 'node:buffer';
 
 import { createGraph } from './graph';
+import { createMessages } from './helper/create-messages';
 import { createReply } from './helper/create-reply';
 import { createSlackClient } from './helper/create-slack-client';
+import { getThreadMessages } from './helper/get-thread-messages';
 
 import type { AppMentionEvent } from './event';
 import type { Env } from '../../type/env';
@@ -28,7 +30,7 @@ export const appMentionEventHandler = async (
   });
 
   try {
-    const graph = await createGraph({
+    const graph = createGraph({
       env,
       slackClient,
       event: message.body,
@@ -50,21 +52,38 @@ export const appMentionEventHandler = async (
       },
     });
 
-    const result = await graph.invoke({
+    const [history, images] = await Promise.all([
+      getThreadMessages(slackClient, {
+        channel: message.body.context.channel,
+        threadTs: message.body.context.threadTs,
+        latest: message.body.context.replyTs,
+      }),
+      Promise.all(message.body.payload.images.map(async (image) => {
+        const response = await fetch(image.url, {
+          headers: {
+            Authorization: `Bearer ${message.body.context.token}`,
+          },
+        });
+        const buffer = await response.arrayBuffer();
+        const base64 = Buffer.from(buffer).toString('base64');
+        return `data:${image.mimetype};base64,${base64}`;
+      })),
+    ]);
+
+    const messages = await createMessages({
+      botUserId: message.body.context.bot,
+      history: history,
+      mention: {
+        ts: message.body.payload.ts,
+        userId: message.body.payload.user,
+        text: message.body.payload.text,
+        images: images,
+      },
+    });
+
+    const result = await graph.invoke({ messages }, {
       context: {
         botUserId: message.body.context.bot,
-        replyUserId: message.body.payload.user,
-        replyUserText: message.body.payload.text,
-        images: await Promise.all(message.body.payload.images.map(async (image) => {
-          const response = await fetch(image.url, {
-            headers: {
-              Authorization: `Bearer ${message.body.context.token}`,
-            },
-          });
-          const buffer = await response.arrayBuffer();
-          const base64 = Buffer.from(buffer).toString('base64');
-          return `data:${image.mimetype};base64,${base64}`;
-        })),
       },
     });
 
