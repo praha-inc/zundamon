@@ -10,7 +10,7 @@
     "lint:type": "tsc --noEmit"
   },
   "dependencies": {
-    "@langchain/core": "1.2.14",
+    "@langchain/core": "1.2.17",
     "@langchain/langgraph": "1.4.18",
     "@langchain/openai": "1.6.2",
     "dedent": "1.7.2",
