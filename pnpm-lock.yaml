@@ -170,8 +170,8 @@ importers:
         specifier: 1.2.14
         version: 1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
       '@langchain/langgraph':
-        specifier: 1.4.18
-        version: 1.4.18(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(zod@4.6.5)
+        specifier: 1.4.21
+        version: 1.4.21(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(zod@4.6.5)
       '@langchain/openai':
         specifier: 1.6.2
         version: 1.6.2(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(undici@7.29.1)(ws@8.21.0)
@@ -675,14 +675,14 @@ packages:
     resolution: {integrity: sha512-NP+FZMDO8kzVf79kiVHByveErVbTc1kUm0OvJuASxy5dt2xo/m7mi4O0npskU71A9h0vke3YUDYEciiAsXdCoA==}
     engines: {node: '>=20'}
 
-  '@langchain/langgraph-checkpoint@1.1.5':
-    resolution: {integrity: sha512-BwDwl5VeTOh6CVuiIPgsUgfK51vTJDMSbFcSCUfjJWsl8/DPdK/mbv+ejxJstkSk/BlSPMP4JfXWcN6jD2ea2Q==}
+  '@langchain/langgraph-checkpoint@1.1.6':
+    resolution: {integrity: sha512-CpDMGTY4Y6qzoGewMoL8MS9Ej35vyrrchbRpKCtUDWnHhrf4lbHp7wnu9dsHaavB3Z+M6aVRl+9GNQbIJVV1dg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': ^1.1.48
 
-  '@langchain/langgraph-sdk@1.12.0':
-    resolution: {integrity: sha512-F3AOZjKZRUGmE3FzY+RaVZI6WzXOkwnuF7jqgto6rDPSnO9OdVdYGvwGDi3jjRGf5xLoDtX2dpsR9z5KptU+5A==}
+  '@langchain/langgraph-sdk@1.12.3':
+    resolution: {integrity: sha512-o5Qd1pepsJKHmHGIcWhOlZe2fvlPs2AEkVOxqzbL3R8IiMBPH2gNG8/kwK36czEnagiJtu4RUn02mKbGRwd5dQ==}
     peerDependencies:
       '@langchain/core': ^1.1.48
       react: ^18 || ^19
@@ -693,8 +693,8 @@ packages:
       react-dom:
         optional: true
 
-  '@langchain/langgraph@1.4.18':
-    resolution: {integrity: sha512-yrMMJ9hk2NVMD2xU2WoVrgFawAU6s/RzEl/dX9BhlyxZHazo1wHY35z4K2BIBzTUh4z3giCzrUoqRAqW2CWpWg==}
+  '@langchain/langgraph@1.4.21':
+    resolution: {integrity: sha512-0LRyRw594IO98etnnBCM6nhckVjWGNnObpdaQij1e+u+GsUwGvn9P4/P42UAJG56WFF72A9n93WwCOW7Mq9yug==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': ^1.1.48
@@ -2006,11 +2006,11 @@ snapshots:
       - openai
       - ws
 
-  '@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))':
+  '@langchain/langgraph-checkpoint@1.1.6(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))':
     dependencies:
       '@langchain/core': 1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
 
-  '@langchain/langgraph-sdk@1.12.0(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))':
+  '@langchain/langgraph-sdk@1.12.3(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))':
     dependencies:
       '@langchain/core': 1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
       '@langchain/protocol': 0.0.19
@@ -2018,11 +2018,11 @@ snapshots:
       p-queue: 9.3.3
       p-retry: 7.1.1
 
-  '@langchain/langgraph@1.4.18(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(zod@4.6.5)':
+  '@langchain/langgraph@1.4.21(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(zod@4.6.5)':
     dependencies:
       '@langchain/core': 1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
-      '@langchain/langgraph-checkpoint': 1.1.5(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))
-      '@langchain/langgraph-sdk': 1.12.0(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))
+      '@langchain/langgraph-checkpoint': 1.1.6(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))
+      '@langchain/langgraph-sdk': 1.12.3(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))
       '@langchain/protocol': 0.0.19
       '@standard-schema/spec': 1.1.0
       zod: 4.6.5
