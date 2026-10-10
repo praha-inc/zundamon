@@ -167,14 +167,14 @@ importers:
   .:
     dependencies:
       '@langchain/core':
-        specifier: 1.2.14
-        version: 1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
+        specifier: 1.2.17
+        version: 1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
       '@langchain/langgraph':
         specifier: 1.4.18
-        version: 1.4.18(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(zod@4.6.5)
+        version: 1.4.18(@langchain/core@1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(zod@4.6.5)
       '@langchain/openai':
         specifier: 1.6.2
-        version: 1.6.2(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(undici@7.29.1)(ws@8.21.0)
+        version: 1.6.2(@langchain/core@1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(undici@7.29.1)(ws@8.21.0)
       dedent:
         specifier: 1.7.2
         version: 1.7.2
@@ -671,8 +671,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@langchain/core@1.2.14':
-    resolution: {integrity: sha512-NP+FZMDO8kzVf79kiVHByveErVbTc1kUm0OvJuASxy5dt2xo/m7mi4O0npskU71A9h0vke3YUDYEciiAsXdCoA==}
+  '@langchain/core@1.2.17':
+    resolution: {integrity: sha512-aLQLSed6oLCMLtJHrINhnFmsu79G2UiDlRslbOx+TSN9NmU+WuDv1OtVxrLpYglhXNy53elSduMVk3XBPG9ulw==}
     engines: {node: '>=20'}
 
   '@langchain/langgraph-checkpoint@1.1.5':
@@ -1990,7 +1990,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)':
+  '@langchain/core@1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)':
     dependencies:
       '@cfworker/json-schema': 4.1.1
       '@standard-schema/spec': 1.1.0
@@ -2006,23 +2006,23 @@ snapshots:
       - openai
       - ws
 
-  '@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))':
+  '@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))':
     dependencies:
-      '@langchain/core': 1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
+      '@langchain/core': 1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
 
-  '@langchain/langgraph-sdk@1.12.0(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))':
+  '@langchain/langgraph-sdk@1.12.0(@langchain/core@1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))':
     dependencies:
-      '@langchain/core': 1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
+      '@langchain/core': 1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
       '@langchain/protocol': 0.0.19
       '@types/json-schema': 7.0.15
       p-queue: 9.3.3
       p-retry: 7.1.1
 
-  '@langchain/langgraph@1.4.18(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(zod@4.6.5)':
+  '@langchain/langgraph@1.4.18(@langchain/core@1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(zod@4.6.5)':
     dependencies:
-      '@langchain/core': 1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
-      '@langchain/langgraph-checkpoint': 1.1.5(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))
-      '@langchain/langgraph-sdk': 1.12.0(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))
+      '@langchain/core': 1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
+      '@langchain/langgraph-checkpoint': 1.1.5(@langchain/core@1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))
+      '@langchain/langgraph-sdk': 1.12.0(@langchain/core@1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))
       '@langchain/protocol': 0.0.19
       '@standard-schema/spec': 1.1.0
       zod: 4.6.5
@@ -2030,9 +2030,9 @@ snapshots:
       - react
       - react-dom
 
-  '@langchain/openai@1.6.2(@langchain/core@1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(undici@7.29.1)(ws@8.21.0)':
+  '@langchain/openai@1.6.2(@langchain/core@1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0))(undici@7.29.1)(ws@8.21.0)':
     dependencies:
-      '@langchain/core': 1.2.14(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
+      '@langchain/core': 1.2.17(openai@7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5))(ws@8.21.0)
       js-tiktoken: 1.0.21
       openai: 7.25.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.5)
       zod: 4.6.5
