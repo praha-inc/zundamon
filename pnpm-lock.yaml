@@ -170,8 +170,8 @@ importers:
         specifier: 1.2.14
         version: 1.2.14(openai@7.36.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0)
       '@langchain/langgraph':
-        specifier: 1.4.18
-        version: 1.4.18(@langchain/core@1.2.14(openai@7.36.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0))(zod@4.6.7)
+        specifier: 1.5.1
+        version: 1.5.1(@langchain/core@1.2.14(openai@7.36.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0))(zod@4.6.7)
       '@langchain/openai':
         specifier: 1.6.2
         version: 1.6.2(@langchain/core@1.2.14(openai@7.36.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0))(undici@7.29.1)(ws@8.21.0)
@@ -693,8 +693,8 @@ packages:
       react-dom:
         optional: true
 
-  '@langchain/langgraph@1.4.18':
-    resolution: {integrity: sha512-yrMMJ9hk2NVMD2xU2WoVrgFawAU6s/RzEl/dX9BhlyxZHazo1wHY35z4K2BIBzTUh4z3giCzrUoqRAqW2CWpWg==}
+  '@langchain/langgraph@1.5.1':
+    resolution: {integrity: sha512-3eGahcGgqlzHhG9FxEMFjfSPvI7As0APmd47HQdF1og2vLjMA1PQpTrmCnlLWcgLCrRflUvYqzS/FDMMh2saFA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': ^1.1.48
@@ -2018,7 +2018,7 @@ snapshots:
       p-queue: 9.3.5
       p-retry: 7.1.1
 
-  '@langchain/langgraph@1.4.18(@langchain/core@1.2.14(openai@7.36.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0))(zod@4.6.7)':
+  '@langchain/langgraph@1.5.1(@langchain/core@1.2.14(openai@7.36.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0))(zod@4.6.7)':
     dependencies:
       '@langchain/core': 1.2.14(openai@7.36.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0)
       '@langchain/langgraph-checkpoint': 1.2.0(@langchain/core@1.2.14(openai@7.36.0(undici@7.29.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0))
