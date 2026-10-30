@@ -24,7 +24,7 @@
     "@types/url-regex-safe": "1.0.2",
     "oxlint": "1.90.0",
     "oxlint-tsgolint": "7.0.2005",
-    "typescript": "5.9.3",
+    "typescript": "7.0.2",
     "wrangler": "4.153.0"
   },
   "packageManager": "pnpm@12.16.0"
