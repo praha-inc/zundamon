@@ -18,7 +18,7 @@
     "zod": "4.6.7"
   },
   "devDependencies": {
-    "@praha/oxlint-config-standard": "1.0.2",
+    "@praha/oxlint-config-standard": "1.0.3",
     "@tsconfig/strictest": "2.0.8",
     "@types/node": "24.19.2",
     "@types/url-regex-safe": "1.0.2",
