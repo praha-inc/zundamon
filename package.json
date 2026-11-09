@@ -23,7 +23,7 @@
     "@types/node": "24.19.2",
     "@types/url-regex-safe": "1.0.2",
     "oxlint": "1.90.0",
-    "oxlint-tsgolint": "7.0.2005",
+    "oxlint-tsgolint": "7.0.2006",
     "typescript": "5.9.3",
     "wrangler": "4.156.2"
   },
