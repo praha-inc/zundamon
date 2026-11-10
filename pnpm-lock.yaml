@@ -173,8 +173,8 @@ importers:
         specifier: 1.4.18
         version: 1.4.18(@langchain/core@1.2.14(openai@7.47.0(undici@7.30.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0))(zod@4.6.7)
       '@langchain/openai':
-        specifier: 1.8.1
-        version: 1.8.1(@langchain/core@1.2.14(openai@7.47.0(undici@7.30.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0))(undici@7.30.1)(ws@8.21.0)
+        specifier: 1.8.2
+        version: 1.8.2(@langchain/core@1.2.14(openai@7.47.0(undici@7.30.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0))(undici@7.30.1)(ws@8.21.0)
       dedent:
         specifier: 1.7.2
         version: 1.7.2
@@ -700,8 +700,8 @@ packages:
       '@langchain/core': ^1.1.48
       zod: ^3.25.32 || ^4.2.0
 
-  '@langchain/openai@1.8.1':
-    resolution: {integrity: sha512-2hHi5GPV8RiA3XtJ8mP7v4WvehM3Unn8CGWd97OvSeWr7BCHVmfmlm5tYsDVFy3CnEqOQcvi73NWijUNKlyjyg==}
+  '@langchain/openai@1.8.2':
+    resolution: {integrity: sha512-pA0ns3ikApRpCbvrShDqmIkPisbbZ3Ygr1HSsmJdrl+gqkVBeLKxS+P0c+DIpzXKoGVg0nuvQCb/ZXLM5Ti+iw==}
     engines: {node: '>=22'}
     peerDependencies:
       '@langchain/core': ^1.3.5
@@ -2036,7 +2036,7 @@ snapshots:
       - react
       - react-dom
 
-  '@langchain/openai@1.8.1(@langchain/core@1.2.14(openai@7.47.0(undici@7.30.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0))(undici@7.30.1)(ws@8.21.0)':
+  '@langchain/openai@1.8.2(@langchain/core@1.2.14(openai@7.47.0(undici@7.30.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0))(undici@7.30.1)(ws@8.21.0)':
     dependencies:
       '@langchain/core': 1.2.14(openai@7.47.0(undici@7.30.1)(ws@8.21.0)(zod@4.6.7))(ws@8.21.0)
       js-tiktoken: 1.0.21
