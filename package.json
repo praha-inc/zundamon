@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@praha/oxlint-config-standard": "1.0.3",
-    "@tsconfig/strictest": "2.0.8",
+    "@tsconfig/strictest": "2.0.9",
     "@types/node": "24.19.2",
     "@types/url-regex-safe": "1.0.2",
     "oxlint": "1.93.0",
