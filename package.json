@@ -22,7 +22,7 @@
     "@tsconfig/strictest": "2.0.9",
     "@types/node": "24.19.2",
     "@types/url-regex-safe": "1.0.2",
-    "oxlint": "1.94.0",
+    "oxlint": "1.95.0",
     "oxlint-tsgolint": "7.0.2008",
     "typescript": "5.9.3",
     "wrangler": "4.167.0"
