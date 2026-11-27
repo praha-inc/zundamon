@@ -25,7 +25,7 @@
     "oxlint": "1.94.0",
     "oxlint-tsgolint": "7.0.2008",
     "typescript": "5.9.3",
-    "wrangler": "4.166.0"
+    "wrangler": "4.167.0"
   },
   "packageManager": "pnpm@12.23.0"
 }
